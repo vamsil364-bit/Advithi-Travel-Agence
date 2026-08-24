@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advithi Travel Agency | Tangutur & Ongole</title>
+<meta name="description" content="Advithi Travel Agency - Car rentals, outstation trips and airport transfers in Tangutur and Ongole.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#0b1748;background:#f7f9ff}
+nav{position:sticky;top:0;z-index:10;background:#07143d;color:white;padding:14px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:800}.logo span{color:#ffd21c}
+nav a{color:white;text-decoration:none;margin-left:22px;font-weight:600}
+.hero{min-height:620px;background:linear-gradient(90deg,rgba(3,15,48,.9),rgba(3,15,48,.25)),url('hero.png') center/cover;display:flex;align-items:center;padding:70px 7%;color:white}
+.hero h1{font-size:clamp(42px,6vw,76px);margin:0 0 12px}.hero h1 span{color:#ffd21c}.hero p{font-size:22px;max-width:620px;line-height:1.5}
+.btn{display:inline-block;background:#ffd21c;color:#07143d;padding:15px 25px;border-radius:10px;text-decoration:none;font-weight:800;margin:8px 8px 8px 0}
+.btn.dark{background:#07143d;color:white;border:1px solid #ffd21c}
+section{padding:65px 7%}h2{text-align:center;font-size:38px;margin:0 0 35px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px}
+.card{background:white;padding:28px;border-radius:18px;box-shadow:0 8px 30px rgba(0,0,0,.08);text-align:center}.icon{font-size:38px}
+.cars .card img{width:100%;border-radius:12px}.cars .card{text-align:left}
+.about{background:#07143d;color:white}.about p{max-width:850px;margin:auto;text-align:center;font-size:18px;line-height:1.7}
+.contact{background:#eef2ff}.contactbox{max-width:700px;margin:auto;background:white;padding:35px;border-radius:20px;text-align:center;box-shadow:0 10px 35px rgba(0,0,0,.08)}
+footer{background:#050f2e;color:white;text-align:center;padding:25px}
+@media(max-width:700px){nav{flex-direction:column;gap:10px}nav a{margin:0 7px}.hero{min-height:560px;padding:45px 6%}.hero p{font-size:18px}}
+
+.booking-wrap{max-width:900px;margin:0 auto;background:#07143d;color:white;padding:32px;border-radius:24px;box-shadow:0 18px 45px rgba(7,20,61,.18)}
+.booking-title{text-align:center;margin:0 0 6px;font-size:34px}
+.booking-subtitle{text-align:center;margin:0 0 24px;color:#dbe3ff}
+.booking-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.booking-field input,.booking-field select{width:100%;padding:15px 16px;border:0;border-radius:10px;font-size:16px;outline:none;background:white;color:#0b1748}
+.booking-field.full{grid-column:1/-1}
+.booking-submit{grid-column:1/-1;width:100%;border:0;background:#ffd21c;color:#07143d;padding:16px;border-radius:10px;font-size:18px;font-weight:800;cursor:pointer}
+.booking-submit:hover{filter:brightness(.96)}
+.booking-note{text-align:center;font-size:13px;color:#c8d2f5;margin:12px 0 0}
+@media(max-width:700px){.booking-wrap{padding:22px 16px}.booking-form{grid-template-columns:1fr}.booking-field.full,.booking-submit{grid-column:auto}.booking-title{font-size:28px}}
+
+.booking-field label{display:block;color:#dbe3ff;font-weight:700;font-size:14px;margin:0 0 6px 4px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Advithi <span>Travel Agency</span></div>
+  <div><a href="#services">Services</a><a href="#cars">Cars</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Comfortable Rides.<br><span>Safe Journeys.</span></h1>
+    <p>Car Rentals & Outstation Trips in Tangutur & Ongole.</p>
+    <a class="btn" href="tel:+918143344418">📞 Call Now</a>
+    <a class="btn" href="https://wa.me/918143344418?text=Hi%20Advithi%20Travel%20Agency%2C%20I%20want%20to%20book%20a%20car." target="_blank">💬 WhatsApp</a>
+  </div>
+</header>
+
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card"><div class="icon">🚗</div><h3>Car Rental with Driver</h3><p>Comfortable rides for local and long-distance travel.</p></div>
+<div class="card"><div class="icon">🛣️</div><h3>Outstation Trips</h3><p>One-way and round-trip travel solutions.</p></div>
+<div class="card"><div class="icon">✈️</div><h3>Airport Transfers</h3><p>Convenient pickup and drop services.</p></div>
+<div class="card"><div class="icon">👨‍👩‍👧</div><h3>Family Trips</h3><p>Safe and comfortable travel for families.</p></div>
+<div class="card"><div class="icon">🏢</div><h3>Corporate Travel</h3><p>Reliable travel support for business needs.</p></div>
+<div class="card"><div class="icon">↔️</div><h3>One-way / Round Trips</h3><p>Flexible travel plans at affordable pricing.</p></div>
+</div>
+</section>
+
+<section id="cars" class="cars">
+<h2>Our Cars</h2>
+<div class="grid">
+<div class="card"><img src="hero.png" alt="Honda Amaze"><h3>Honda Amaze</h3><p>Comfortable • Safe • Reliable</p></div>
+<div class="card"><img src="hero.png" alt="Maruti Swift"><h3>Maruti Swift</h3><p>Stylish • Smooth Drive • Fuel Efficient</p></div>
+</div>
+</section>
+
+<section id="about" class="about">
+<h2>About Advithi Travel Agency</h2>
+<p>Advithi Travel Agency provides safe, reliable and affordable travel solutions in Tangutur and Ongole. Whether it is a local ride, airport transfer, family trip or outstation journey, our goal is to make every trip comfortable and stress-free.</p>
+</section>
+
+<section id="contact" class="contact">
+  <div class="booking-wrap">
+    <h2 class="booking-title">🚗 Book Your Ride</h2>
+    <p class="booking-subtitle">Comfortable Ride • Safe Journey</p>
+    <form class="booking-form" onsubmit="sendBooking(event)">
+      <div class="booking-field"><input id="customerName" type="text" placeholder="Your Name" required></div>
+      <div class="booking-field"><input id="phone" type="tel" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10" required></div>
+       <div class="booking-field"><input id="email" type="email" placeholder="Email Address" required></div>
+      <div class="booking-field"><label for="pickup">📍 Pick Up Location</label><input id="pickup" type="text" placeholder="Enter pickup location" required></div>
+      <div class="booking-field"><label for="destination">📍 Drop Off Location</label><input id="destination" type="text" placeholder="Enter drop off location" required></div>
+      <div class="booking-field"><label for="pickupDate">📅 Pick Up Date</label><input id="pickupDate" type="date" required></div>
+      <div class="booking-field"><label for="pickupTime">⏰ Pick Up Time</label><input id="pickupTime" type="time" required></div>
+      <div class="booking-field">
+        <select id="car" required>
+          <option value="">Choose Car</option>
+          <option>Honda Amaze</option>
+          <option>Maruti Swift</option>
+        </select>
+      </div>
+      <div class="booking-field">
+        <select id="travelers" required>
+          <option value="">Travelers</option>
+          <option>1 Traveler</option><option>2 Travelers</option><option>3 Travelers</option>
+          <option>4 Travelers</option><option>5+ Travelers</option>
+        </select>
+      </div>
+      <div class="booking-field full"><input id="notes" type="text" placeholder="Extra details (optional)"></div>
+      <button class="booking-submit" type="submit">📲 Confirm Booking Request →</button>
+    </form>
+    <p class="booking-note">Booking request will be sent to Advithi Travel Agency.</p>
+  </div>
+</section>
+
+<footer>© 2026 Advithi Travel Agency • Tangutur & Ongole</footer>
+
+<script>
+const BOOKING_API_URL = "https://script.google.com/macros/s/AKfycbwD8n2UjHcErN4eSnR6qaxyls6FsKyxPR0LOBUDpXcrrMK_uCqgAOq7dSYy8yYw1Bjr/exec";
+
+async function sendBooking(event){
+  event.preventDefault();
+
+  const v = id => document.getElementById(id).value.trim();
+  const button = document.querySelector('.booking-submit');
+  const payload = {
+    customerName: v('customerName'),
+    phone: v('phone'),
+    email: v('email'),
+    pickup: v('pickup'),
+    destination: v('destination'),
+    pickupDate: v('pickupDate'),
+    pickupTime: v('pickupTime'),
+    car: v('car'),
+    travelers: v('travelers'),
+    notes: v('notes')
+  };
+
+  button.disabled = true;
+  button.textContent = '⏳ Sending Booking...';
+
+  try {
+    // text/plain keeps this request simple so the Apps Script web app
+    // can receive the JSON in e.postData.contents.
+    await fetch(BOOKING_API_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+
+    const whatsappMessage = `Hello Advithi Travel Agency 👋
+
+I submitted a booking request.
+
+👤 Name: ${payload.customerName}
+📱 Phone: ${payload.phone}
+📧 Email: ${payload.email}
+📍 Pickup: ${payload.pickup}
+📍 Destination: ${payload.destination}
+📅 Date: ${payload.pickupDate}
+⏰ Time: ${payload.pickupTime}
+🚗 Car: ${payload.car}
+👥 Travelers: ${payload.travelers}
+📝 Extra Details: ${payload.notes || 'None'}`;
+
+    alert('Booking request sent successfully! We will contact you shortly.');
+    window.open(
+      'https://wa.me/918143344418?text=' + encodeURIComponent(whatsappMessage),
+      '_blank'
+    );
+
+    event.target.reset();
+  } catch (error) {
+    alert('Booking could not be sent. Please call or WhatsApp Advithi Travel Agency.');
+    console.error(error);
+  } finally {
+    button.disabled = false;
+    button.textContent = '📲 Confirm Booking Request →';
+  }
+}
+</script>
+
+</body>
+</html>
