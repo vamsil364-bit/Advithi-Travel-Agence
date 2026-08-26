@@ -11,6 +11,10 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
@@ -18,6 +22,7 @@ body{
   color:#222;
 }
 
+/* NAVBAR */
 nav{
   background:#07143d;
   color:white;
@@ -32,44 +37,57 @@ nav{
 
 .logo{
   font-size:22px;
-  font-weight:bold;
+  font-weight:800;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  margin-left:20px;
+  margin-left:18px;
   font-weight:bold;
 }
 
+/* HERO */
 .hero{
-  min-height:520px;
+  min-height:570px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:50px 20px;
-  background:linear-gradient(135deg,#07143d,#123d76);
+  padding:60px 20px;
+  background:
+    linear-gradient(135deg,#07143d,#123d76);
   color:white;
 }
 
+.hero-content{
+  max-width:850px;
+}
+
 .hero h1{
-  font-size:clamp(38px,7vw,70px);
+  font-size:clamp(40px,7vw,72px);
+  line-height:1.1;
   margin:0 0 20px;
 }
 
 .hero p{
   font-size:20px;
-  line-height:1.6;
+  line-height:1.7;
+  margin:0 0 25px;
+}
+
+.hero-buttons{
+  margin-top:10px;
 }
 
 .btn{
   display:inline-block;
-  padding:14px 25px;
-  margin:10px 5px;
-  border-radius:8px;
+  padding:15px 26px;
+  margin:7px;
+  border-radius:9px;
   text-decoration:none;
   font-weight:bold;
+  font-size:16px;
   background:#ffd23f;
   color:#07143d;
 }
@@ -79,6 +97,7 @@ nav a{
   color:#07143d;
 }
 
+/* SECTIONS */
 section{
   padding:65px 7%;
 }
@@ -86,12 +105,14 @@ section{
 section h2{
   text-align:center;
   font-size:32px;
-  margin-bottom:35px;
+  margin:0 0 35px;
 }
 
+/* SERVICES */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
   gap:22px;
 }
 
@@ -108,6 +129,16 @@ section h2{
   margin-bottom:12px;
 }
 
+.card h3{
+  margin:10px 0;
+}
+
+.card p{
+  color:#666;
+  line-height:1.5;
+}
+
+/* CARS */
 .cars{
   background:#eef2f7;
 }
@@ -115,9 +146,10 @@ section h2{
 .car-name{
   font-size:22px;
   font-weight:bold;
-  margin-top:15px;
+  margin-top:12px;
 }
 
+/* ABOUT */
 .about{
   background:#07143d;
   color:white;
@@ -125,12 +157,13 @@ section h2{
 }
 
 .about p{
-  max-width:800px;
+  max-width:850px;
   margin:auto;
   font-size:18px;
   line-height:1.8;
 }
 
+/* BOOKING */
 .booking{
   background:#eef2f7;
 }
@@ -139,7 +172,7 @@ section h2{
   max-width:900px;
   margin:auto;
   background:white;
-  padding:30px;
+  padding:32px;
   border-radius:18px;
   box-shadow:0 5px 25px rgba(0,0,0,.1);
 }
@@ -147,7 +180,7 @@ section h2{
 .booking-title{
   text-align:center;
   font-size:30px;
-  margin-bottom:10px;
+  margin:0 0 10px;
 }
 
 .booking-subtitle{
@@ -184,6 +217,7 @@ section h2{
   border:1px solid #ccc;
   border-radius:8px;
   font-size:16px;
+  background:white;
 }
 
 .field textarea{
@@ -214,6 +248,7 @@ section h2{
   color:#666;
 }
 
+/* CONTACT */
 .contact{
   text-align:center;
   background:#eaf7f0;
@@ -230,6 +265,7 @@ section h2{
   color:white;
 }
 
+/* FOOTER */
 footer{
   background:#050f2e;
   color:white;
@@ -237,14 +273,29 @@ footer{
   padding:25px;
 }
 
+/* MOBILE */
 @media(max-width:700px){
+
   nav{
     flex-direction:column;
     gap:12px;
   }
 
   nav a{
-    margin:0 7px;
+    margin:0 6px;
+    font-size:14px;
+  }
+
+  .hero{
+    min-height:520px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:17px;
   }
 
   .booking-form{
@@ -255,14 +306,22 @@ footer{
   .submit{
     grid-column:auto;
   }
+
+  .booking-box{
+    padding:22px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-  <div class="logo">🚗 Advithi Travel Agency</div>
+
+  <div class="logo">
+    🚗 Advithi Travel Agency
+  </div>
 
   <div>
     <a href="#services">Services</a>
@@ -270,11 +329,14 @@ footer{
     <a href="#booking">Book</a>
     <a href="#contact">Contact</a>
   </div>
+
 </nav>
 
+
+<!-- HERO -->
 <header class="hero">
 
-  <div>
+  <div class="hero-content">
 
     <h1>
       Comfortable Rides.<br>
@@ -286,18 +348,25 @@ footer{
       Tangutur & Ongole
     </p>
 
-    <a class="btn" href="#booking">
-      🚗 Book Your Ride
-    </a>
+    <!-- BOOK YOUR RIDE DIRECTLY UNDER HERO -->
+    <div class="hero-buttons">
 
-    <a class="btn dark" href="tel:+918143344418">
-      📞 Call Now
-    </a>
+      <a class="btn" href="#booking">
+        🚗 Book Your Ride
+      </a>
+
+      <a class="btn dark" href="tel:+918143344418">
+        📞 Call Now
+      </a>
+
+    </div>
 
   </div>
 
 </header>
 
+
+<!-- SERVICES -->
 <section id="services">
 
   <h2>Our Services</h2>
@@ -307,43 +376,57 @@ footer{
     <div class="card">
       <div class="icon">🚗</div>
       <h3>Car Rentals</h3>
-      <p>Comfortable cars for your travel needs.</p>
+      <p>
+        Comfortable cars for your travel needs.
+      </p>
     </div>
 
     <div class="card">
       <div class="icon">🛣️</div>
       <h3>Outstation Trips</h3>
-      <p>Safe and reliable long-distance travel.</p>
+      <p>
+        Safe and reliable long-distance travel.
+      </p>
     </div>
 
     <div class="card">
       <div class="icon">✈️</div>
       <h3>Airport Trips</h3>
-      <p>Convenient airport pickup and drop.</p>
+      <p>
+        Convenient airport pickup and drop.
+      </p>
     </div>
 
     <div class="card">
       <div class="icon">👨‍👩‍👧‍👦</div>
       <h3>Family Trips</h3>
-      <p>Comfortable travel for families and groups.</p>
+      <p>
+        Comfortable travel for families and groups.
+      </p>
     </div>
 
     <div class="card">
       <div class="icon">🏢</div>
       <h3>Corporate Travel</h3>
-      <p>Reliable transportation for business trips.</p>
+      <p>
+        Reliable transportation for business trips.
+      </p>
     </div>
 
     <div class="card">
       <div class="icon">↔️</div>
       <h3>One Way Trips</h3>
-      <p>Easy one-way travel options.</p>
+      <p>
+        Easy one-way travel options.
+      </p>
     </div>
 
   </div>
 
 </section>
 
+
+<!-- CARS -->
 <section id="cars" class="cars">
 
   <h2>Our Cars</h2>
@@ -352,35 +435,55 @@ footer{
 
     <div class="card">
       <div class="icon">🚘</div>
-      <div class="car-name">Honda Amaze</div>
-      <p>Comfortable & economical</p>
+      <div class="car-name">
+        Honda Amaze
+      </div>
+      <p>
+        Comfortable & economical
+      </p>
     </div>
 
     <div class="card">
       <div class="icon">🚙</div>
-      <div class="car-name">Maruti Swift</div>
-      <p>Perfect for city & trips</p>
+      <div class="car-name">
+        Maruti Swift
+      </div>
+      <p>
+        Perfect for city & trips
+      </p>
     </div>
 
     <div class="card">
       <div class="icon">🚐</div>
-      <div class="car-name">Maruti Ertiga</div>
-      <p>Ideal for families & groups</p>
+      <div class="car-name">
+        Maruti Ertiga
+      </div>
+      <p>
+        Ideal for families & groups
+      </p>
     </div>
 
     <div class="card">
       <div class="icon">🚗</div>
-      <div class="car-name">Toyota Etios</div>
-      <p>Comfortable & reliable</p>
+      <div class="car-name">
+        Toyota Etios
+      </div>
+      <p>
+        Comfortable & reliable
+      </p>
     </div>
 
   </div>
 
 </section>
 
+
+<!-- ABOUT -->
 <section class="about">
 
-  <h2>About Advithi Travel Agency</h2>
+  <h2>
+    About Advithi Travel Agency
+  </h2>
 
   <p>
     Advithi Travel Agency provides comfortable,
@@ -392,6 +495,8 @@ footer{
 
 </section>
 
+
+<!-- BOOKING -->
 <section id="booking" class="booking">
 
   <div class="booking-box">
@@ -404,71 +509,129 @@ footer{
       Fill in your details and submit your booking request.
     </p>
 
-    <form class="booking-form" onsubmit="sendBooking(event)">
 
+    <form
+      class="booking-form"
+      onsubmit="sendBooking(event)"
+    >
+
+
+      <!-- NAME -->
       <div class="field">
-        <label for="customerName">Customer Name</label>
+
+        <label for="customerName">
+          Customer Name
+        </label>
+
         <input
           id="customerName"
           type="text"
           placeholder="Enter your name"
           required>
+
       </div>
 
+
+      <!-- PHONE -->
       <div class="field">
-        <label for="phone">Phone Number</label>
+
+        <label for="phone">
+          Phone Number
+        </label>
+
         <input
           id="phone"
           type="tel"
           placeholder="Enter phone number"
           required>
+
       </div>
 
+
+      <!-- EMAIL -->
       <div class="field">
-        <label for="email">Email</label>
+
+        <label for="email">
+          Email
+        </label>
+
         <input
           id="email"
           type="email"
           placeholder="Enter email address"
           required>
+
       </div>
 
+
+      <!-- PICKUP -->
       <div class="field">
-        <label for="pickup">Pickup Location</label>
+
+        <label for="pickup">
+          Pickup Location
+        </label>
+
         <input
           id="pickup"
           type="text"
           placeholder="Enter pickup location"
           required>
+
       </div>
 
+
+      <!-- DESTINATION -->
       <div class="field">
-        <label for="destination">Destination</label>
+
+        <label for="destination">
+          Destination
+        </label>
+
         <input
           id="destination"
           type="text"
           placeholder="Enter destination"
           required>
+
       </div>
 
+
+      <!-- DATE -->
       <div class="field">
-        <label for="pickupDate">Travel Date</label>
+
+        <label for="pickupDate">
+          Travel Date
+        </label>
+
         <input
           id="pickupDate"
           type="date"
           required>
+
       </div>
 
+
+      <!-- TIME -->
       <div class="field">
-        <label for="pickupTime">Travel Time</label>
+
+        <label for="pickupTime">
+          Travel Time
+        </label>
+
         <input
           id="pickupTime"
           type="time"
           required>
+
       </div>
 
+
+      <!-- CAR -->
       <div class="field">
-        <label for="car">Choose Car</label>
+
+        <label for="car">
+          Choose Car
+        </label>
 
         <select id="car" required>
 
@@ -496,6 +659,8 @@ footer{
 
       </div>
 
+
+      <!-- TRAVELERS -->
       <div class="field">
 
         <label for="travelers">
@@ -540,6 +705,8 @@ footer{
 
       </div>
 
+
+      <!-- NOTES -->
       <div class="field full">
 
         <label for="notes">
@@ -548,29 +715,39 @@ footer{
 
         <textarea
           id="notes"
-          placeholder="Any special requirements?"></textarea>
+          placeholder="Any special requirements?"
+        ></textarea>
 
       </div>
 
+
+      <!-- SUBMIT -->
       <button
         class="submit"
-        type="submit">
+        type="submit"
+      >
         📱 Confirm Booking
       </button>
 
     </form>
 
+
     <p class="booking-note">
-      Your booking request will be sent to Advithi Travel Agency.
+      Booking request will be sent to
+      Advithi Travel Agency.
     </p>
 
   </div>
 
 </section>
 
+
+<!-- CONTACT -->
 <section id="contact" class="contact">
 
-  <h2>Contact Us</h2>
+  <h2>
+    Contact Us
+  </h2>
 
   <p>
     📞 8143344418
@@ -582,18 +759,23 @@ footer{
 
   <a
     href="https://wa.me/918143344418"
-    target="_blank">
+    target="_blank"
+  >
     💬 WhatsApp
   </a>
 
 </section>
 
+
+<!-- FOOTER -->
 <footer>
 
   © 2026 Advithi Travel Agency • Tangutur
 
 </footer>
 
+
+<!-- BOOKING SCRIPT -->
 <script>
 
 const BOOKING_API_URL =
