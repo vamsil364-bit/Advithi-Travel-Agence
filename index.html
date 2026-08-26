@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Advithi Travel Agency | Car Rentals</title>
 
 <style>
@@ -11,280 +12,283 @@
 html{scroll-behavior:smooth}
 
 body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f7fa;
-color:#222;
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fa;
+  color:#222;
 }
 
 nav{
-background:#07143d;
-color:#fff;
-padding:17px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
+  background:#07143d;
+  color:white;
+  padding:17px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 .logo{
-font-size:22px;
-font-weight:800;
+  font-size:22px;
+  font-weight:800;
 }
 
 nav a{
-color:#fff;
-text-decoration:none;
-margin-left:18px;
-font-weight:bold;
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:bold;
 }
 
 .hero{
-background:linear-gradient(135deg,#07143d,#123d76);
-color:#fff;
-text-align:center;
-padding:55px 20px 30px;
+  background:linear-gradient(135deg,#07143d,#123d76);
+  color:white;
+  text-align:center;
+  padding:55px 20px 30px;
 }
 
 .hero h1{
-font-size:clamp(40px,7vw,70px);
-line-height:1.1;
-margin:0;
+  font-size:clamp(40px,7vw,70px);
+  line-height:1.1;
+  margin:0;
 }
 
 .hero p{
-font-size:20px;
-line-height:1.6;
-margin:18px 0 0;
+  font-size:20px;
+  line-height:1.6;
+  margin:18px 0 0;
 }
 
-/* BOOKING DIRECTLY UNDER HERO */
+/* BOOKING */
 
 .booking{
-background:#eef2f7;
-padding:25px 6% 60px;
+  background:#eef2f7;
+  padding:25px 6% 60px;
 }
 
 .booking-box{
-max-width:900px;
-margin:0 auto;
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 8px 30px rgba(0,0,0,.12);
+  max-width:900px;
+  margin:0 auto;
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);
 }
 
 .booking-title{
-text-align:center;
-color:#07143d;
-font-size:32px;
-margin:0 0 8px;
+  text-align:center;
+  color:#07143d;
+  font-size:32px;
+  margin:0 0 8px;
 }
 
 .booking-subtitle{
-text-align:center;
-color:#666;
-margin:0 0 28px;
+  text-align:center;
+  color:#666;
+  margin:0 0 28px;
 }
 
 .booking-form{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
 }
 
 .field{
-display:flex;
-flex-direction:column;
+  display:flex;
+  flex-direction:column;
 }
 
 .field.full{
-grid-column:1/-1;
+  grid-column:1/-1;
 }
 
 .field label{
-font-weight:bold;
-color:#07143d;
-margin-bottom:7px;
+  font-weight:bold;
+  color:#07143d;
+  margin-bottom:7px;
 }
 
 .field input,
 .field select,
 .field textarea{
-width:100%;
-padding:14px;
-border:1px solid #ccc;
-border-radius:9px;
-font-size:16px;
-background:#fff;
-outline:none;
+  width:100%;
+  padding:14px;
+  border:1px solid #ccc;
+  border-radius:9px;
+  font-size:16px;
+  background:white;
+  outline:none;
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus{
-border-color:#07143d;
+  border-color:#07143d;
 }
 
 .field textarea{
-min-height:90px;
-resize:vertical;
+  min-height:90px;
+  resize:vertical;
 }
 
 .submit{
-grid-column:1/-1;
-border:0;
-border-radius:10px;
-padding:17px;
-background:#07143d;
-color:#fff;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
+  grid-column:1/-1;
+  border:0;
+  border-radius:10px;
+  padding:17px;
+  background:#07143d;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 .submit:disabled{
-opacity:.6;
+  opacity:.6;
 }
 
 .booking-note{
-text-align:center;
-color:#666;
-font-size:13px;
-margin:14px 0 0;
+  text-align:center;
+  color:#666;
+  font-size:13px;
+  margin:14px 0 0;
 }
 
+/* SECTIONS */
+
 section{
-padding:65px 7%;
+  padding:65px 7%;
 }
 
 section h2{
-text-align:center;
-font-size:32px;
-margin:0 0 35px;
+  text-align:center;
+  font-size:32px;
+  margin:0 0 35px;
 }
 
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:22px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
 }
 
 .card{
-background:#fff;
-padding:28px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-text-align:center;
+  background:white;
+  padding:28px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  text-align:center;
 }
 
 .icon{
-font-size:42px;
-margin-bottom:12px;
+  font-size:42px;
+  margin-bottom:12px;
 }
 
 .card h3{
-margin:8px 0;
+  margin:8px 0;
 }
 
 .card p{
-color:#666;
-line-height:1.5;
+  color:#666;
+  line-height:1.5;
 }
 
 .cars{
-background:#eef2f7;
+  background:#eef2f7;
 }
 
 .car-name{
-font-size:22px;
-font-weight:bold;
+  font-size:22px;
+  font-weight:bold;
 }
 
 .about{
-background:#07143d;
-color:#fff;
-text-align:center;
+  background:#07143d;
+  color:white;
+  text-align:center;
 }
 
 .about p{
-max-width:850px;
-margin:auto;
-font-size:18px;
-line-height:1.8;
+  max-width:850px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.8;
 }
 
 .contact{
-background:#eaf7f0;
-text-align:center;
+  background:#eaf7f0;
+  text-align:center;
 }
 
 .contact a{
-display:inline-block;
-margin:8px;
-padding:14px 22px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-background:#07143d;
-color:#fff;
+  display:inline-block;
+  margin:8px;
+  padding:14px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  background:#07143d;
+  color:white;
 }
 
 footer{
-background:#050f2e;
-color:#fff;
-text-align:center;
-padding:25px;
+  background:#050f2e;
+  color:white;
+  text-align:center;
+  padding:25px;
 }
 
 @media(max-width:700px){
 
-nav{
-flex-direction:column;
-gap:12px;
-}
+  nav{
+    flex-direction:column;
+    gap:12px;
+  }
 
-nav a{
-margin:0 6px;
-font-size:14px;
-}
+  nav a{
+    margin:0 6px;
+    font-size:14px;
+  }
 
-.hero{
-padding:45px 18px 25px;
-}
+  .hero{
+    padding:45px 18px 25px;
+  }
 
-.hero h1{
-font-size:42px;
-}
+  .hero h1{
+    font-size:42px;
+  }
 
-.hero p{
-font-size:17px;
-}
+  .hero p{
+    font-size:17px;
+  }
 
-.booking{
-padding:20px 12px 45px;
-}
+  .booking{
+    padding:20px 12px 45px;
+  }
 
-.booking-box{
-padding:22px 16px;
-}
+  .booking-box{
+    padding:22px 16px;
+  }
 
-.booking-form{
-grid-template-columns:1fr;
-}
+  .booking-form{
+    grid-template-columns:1fr;
+  }
 
-.field.full,
-.submit{
-grid-column:auto;
-}
-
+  .field.full,
+  .submit{
+    grid-column:auto;
+  }
 }
 </style>
 </head>
 
 <body>
+
+<!-- NAVBAR -->
 
 <nav>
 
@@ -293,16 +297,16 @@ grid-column:auto;
 </div>
 
 <div>
-
 <a href="#booking">Book</a>
 <a href="#services">Services</a>
 <a href="#cars">Cars</a>
 <a href="#contact">Contact</a>
-
 </div>
 
 </nav>
 
+
+<!-- HERO -->
 
 <header class="hero">
 
@@ -319,7 +323,7 @@ Tangutur &amp; Ongole
 </header>
 
 
-<!-- BOOKING FORM DIRECTLY UNDER COMFORTABLE RIDES -->
+<!-- BOOKING FORM -->
 
 <section id="booking" class="booking">
 
@@ -333,32 +337,20 @@ Tangutur &amp; Ongole
 Fill in your details and submit your booking request.
 </p>
 
-<form
-class="booking-form"
-onsubmit="sendBooking(event)"
->
+<form class="booking-form" onsubmit="sendBooking(event)">
 
 <div class="field">
-
-<label for="customerName">
-Customer Name
-</label>
-
+<label for="customerName">Customer Name</label>
 <input
 id="customerName"
 type="text"
 placeholder="Enter your name"
 required>
-
 </div>
 
 
 <div class="field">
-
-<label for="phone">
-Phone Number
-</label>
-
+<label for="phone">Phone Number</label>
 <input
 id="phone"
 type="tel"
@@ -366,128 +358,78 @@ placeholder="Enter 10 digit number"
 pattern="[0-9]{10}"
 maxlength="10"
 required>
-
 </div>
 
 
 <div class="field">
-
-<label for="email">
-Email
-</label>
-
+<label for="email">Email</label>
 <input
 id="email"
 type="email"
 placeholder="Enter email address"
 required>
-
 </div>
 
 
 <div class="field">
-
-<label for="pickup">
-📍 Pickup Location
-</label>
-
+<label for="pickup">📍 Pickup Location</label>
 <input
 id="pickup"
 type="text"
 placeholder="Enter pickup location"
 required>
-
 </div>
 
 
 <div class="field">
-
-<label for="destination">
-📍 Destination
-</label>
-
+<label for="destination">📍 Destination</label>
 <input
 id="destination"
 type="text"
 placeholder="Enter destination"
 required>
-
 </div>
 
 
 <div class="field">
-
-<label for="pickupDate">
-📅 Travel Date
-</label>
-
+<label for="pickupDate">📅 Travel Date</label>
 <input
 id="pickupDate"
 type="date"
 required>
-
 </div>
 
 
 <div class="field">
-
-<label for="pickupTime">
-⏰ Travel Time
-</label>
-
+<label for="pickupTime">⏰ Travel Time</label>
 <input
 id="pickupTime"
 type="time"
 required>
-
 </div>
 
 
 <div class="field">
-
-<label for="car">
-🚗 Choose Car
-</label>
+<label for="car">🚗 Choose Car</label>
 
 <select id="car" required>
 
-<option value="">
-Choose Car
-</option>
-
-<option value="Honda Amaze">
-Honda Amaze
-</option>
-
-<option value="Maruti Swift">
-Maruti Swift
-</option>
-
-<option value="Maruti Ertiga">
-Maruti Ertiga
-</option>
-
-<option value="Toyota Etios">
-Toyota Etios
-</option>
+<option value="">Choose Car</option>
+<option value="Honda Amaze">Honda Amaze</option>
+<option value="Maruti Swift">Maruti Swift</option>
+<option value="Maruti Ertiga">Maruti Ertiga</option>
+<option value="Toyota Etios">Toyota Etios</option>
 
 </select>
-
 </div>
 
 
 <div class="field">
-
-<label for="travelers">
-👥 Travelers
-</label>
+<label for="travelers">👥 Travelers</label>
 
 <select id="travelers" required>
 
-<option value="">
-Select Travelers
-</option>
-
+<option value="">Select Travelers</option>
 <option value="1 Traveler">1 Traveler</option>
 <option value="2 Travelers">2 Travelers</option>
 <option value="3 Travelers">3 Travelers</option>
@@ -497,7 +439,6 @@ Select Travelers
 <option value="7 Travelers">7 Travelers</option>
 
 </select>
-
 </div>
 
 
@@ -509,23 +450,21 @@ Additional Details
 
 <textarea
 id="notes"
-placeholder="Any special requirements?"
-></textarea>
+placeholder="Any special requirements?">
+</textarea>
 
 </div>
 
 
 <button
 class="submit"
-type="submit"
->
+type="submit">
 
 📱 Confirm Booking
 
 </button>
 
 </form>
-
 
 <p class="booking-note">
 Your booking request will be sent to Advithi Travel Agency.
@@ -540,9 +479,7 @@ Your booking request will be sent to Advithi Travel Agency.
 
 <section id="services">
 
-<h2>
-Our Services
-</h2>
+<h2>Our Services</h2>
 
 <div class="grid">
 
@@ -591,9 +528,7 @@ Our Services
 
 <section id="cars" class="cars">
 
-<h2>
-Our Cars
-</h2>
+<h2>Our Cars</h2>
 
 <div class="grid">
 
@@ -649,13 +584,9 @@ and comfortable for our customers.
 
 <section id="contact" class="contact">
 
-<h2>
-Contact Us
-</h2>
+<h2>Contact Us</h2>
 
-<p>
-📞 8143344418
-</p>
+<p>📞 8143344418</p>
 
 <a href="tel:+918143344418">
 📞 Call Us
@@ -663,8 +594,7 @@ Contact Us
 
 <a
 href="https://wa.me/918143344418"
-target="_blank"
->
+target="_blank">
 💬 WhatsApp
 </a>
 
@@ -672,123 +602,117 @@ target="_blank"
 
 
 <footer>
-
 © 2026 Advithi Travel Agency • Tangutur
-
 </footer>
 
 
+<!-- =====================================================
+     BOOKING CONNECTION
+===================================================== -->
+
 <script>
 
-/* NEW APPS SCRIPT URL */
-
 const BOOKING_API_URL =
-"https://script.google.com/macros/s/AKfycbz5Tc6hP-QYFrGtn2eRAQKjslOoUE8VZ9lYQsIGPjMLrE-Bnvip4opG5yCyd-Z1nNLUgw/exec";
+"https://script.google.com/macros/s/AKfycbwFOd8mhnv1nCtlArqiIL1R73cQK0cFPak8VLhpkBgB8t2Li1Yk_fnCx6hLlHqat8Sr1Q/exec";
 
 
 async function sendBooking(event){
 
-event.preventDefault();
+  event.preventDefault();
 
-const form = event.target;
+  const form = event.target;
 
-const button =
-form.querySelector(".submit");
-
-
-const bookingData = {
-
-customerName:
-document.getElementById("customerName").value.trim(),
-
-phone:
-document.getElementById("phone").value.trim(),
-
-email:
-document.getElementById("email").value.trim(),
-
-pickup:
-document.getElementById("pickup").value.trim(),
-
-destination:
-document.getElementById("destination").value.trim(),
-
-pickupDate:
-document.getElementById("pickupDate").value,
-
-pickupTime:
-document.getElementById("pickupTime").value,
-
-car:
-document.getElementById("car").value,
-
-travelers:
-document.getElementById("travelers").value,
-
-notes:
-document.getElementById("notes").value.trim()
-
-};
+  const button =
+    form.querySelector(".submit");
 
 
-button.disabled = true;
+  const bookingData = {
 
-button.textContent =
-"⏳ Sending Booking...";
+    customerName:
+      document.getElementById("customerName").value.trim(),
 
+    phone:
+      document.getElementById("phone").value.trim(),
 
-try{
+    email:
+      document.getElementById("email").value.trim(),
 
-await fetch(
+    pickup:
+      document.getElementById("pickup").value.trim(),
 
-BOOKING_API_URL,
+    destination:
+      document.getElementById("destination").value.trim(),
 
-{
+    pickupDate:
+      document.getElementById("pickupDate").value,
 
-method:"POST",
+    pickupTime:
+      document.getElementById("pickupTime").value,
 
-mode:"no-cors",
+    car:
+      document.getElementById("car").value,
 
-headers:{
-"Content-Type":"text/plain;charset=utf-8"
-},
+    travelers:
+      document.getElementById("travelers").value,
 
-body:
-JSON.stringify(bookingData)
+    notes:
+      document.getElementById("notes").value.trim()
 
-}
-
-);
-
-
-alert(
-"✅ Booking Request Sent Successfully!\n\n" +
-"Thank you for choosing Advithi Travel Agency.\n" +
-"We will contact you shortly."
-);
+  };
 
 
-form.reset();
+  button.disabled = true;
+
+  button.textContent =
+    "⏳ Sending Booking...";
 
 
-}
+  try{
 
-catch(error){
+    await fetch(
+      BOOKING_API_URL,
+      {
+        method:"POST",
+        mode:"no-cors",
 
-console.error(error);
+        headers:{
+          "Content-Type":
+            "text/plain;charset=utf-8"
+        },
 
-alert(
-"❌ Booking could not be sent.\n\n" +
-"Please call 8143344418."
-);
-
-}
+        body:
+          JSON.stringify(bookingData)
+      }
+    );
 
 
-button.disabled = false;
+    alert(
+      "✅ Booking Request Sent Successfully!\n\n" +
+      "Thank you for choosing Advithi Travel Agency.\n" +
+      "We will contact you shortly."
+    );
 
-button.textContent =
-"📱 Confirm Booking";
+
+    form.reset();
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    alert(
+      "❌ Booking could not be sent.\n\n" +
+      "Please call 8143344418."
+    );
+
+  }
+
+
+  button.disabled = false;
+
+  button.textContent =
+    "📱 Confirm Booking";
 
 }
 
