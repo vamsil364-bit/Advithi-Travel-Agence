@@ -4,38 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Advithi Travel Agency | Tangutur & Ongole</title>
-
-<meta name="description" content="Advithi Travel Agency - Car rentals, outstation trips and airport transfers in Tangutur and Ongole.">
+<title>Advithi Travel Agency</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
 
 body{
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  color:#0b1748;
-  background:#f7f9ff;
+  font-family:Arial,sans-serif;
+  background:#f5f7ff;
+  color:#07143d;
 }
 
 nav{
-  position:sticky;
-  top:0;
-  z-index:10;
   background:#07143d;
   color:white;
-  padding:14px 6%;
+  padding:15px 6%;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 .logo{
-  font-size:25px;
-  font-weight:800;
+  font-size:24px;
+  font-weight:bold;
 }
 
 .logo span{
@@ -45,29 +42,28 @@ nav{
 nav a{
   color:white;
   text-decoration:none;
-  margin-left:22px;
-  font-weight:600;
+  margin-left:18px;
 }
 
 .hero{
-  min-height:620px;
+  min-height:560px;
+  display:flex;
+  align-items:center;
+  padding:60px 7%;
+  color:white;
+
   background:
     linear-gradient(
       90deg,
       rgba(3,15,48,.9),
-      rgba(3,15,48,.25)
+      rgba(3,15,48,.3)
     ),
-    url('hero.png') center/cover;
-
-  display:flex;
-  align-items:center;
-  padding:70px 7%;
-  color:white;
+    url("hero.png") center/cover;
 }
 
 .hero h1{
-  font-size:clamp(42px,6vw,76px);
-  margin:0 0 12px;
+  font-size:clamp(42px,7vw,75px);
+  margin:0 0 15px;
 }
 
 .hero h1 span{
@@ -75,30 +71,28 @@ nav a{
 }
 
 .hero p{
-  font-size:22px;
-  max-width:620px;
-  line-height:1.5;
+  font-size:21px;
 }
 
 .btn{
   display:inline-block;
+  padding:14px 22px;
+  margin:8px 8px 0 0;
   background:#ffd21c;
   color:#07143d;
-  padding:15px 25px;
-  border-radius:10px;
   text-decoration:none;
-  font-weight:800;
-  margin:8px 8px 8px 0;
+  border-radius:9px;
+  font-weight:bold;
 }
 
 section{
-  padding:65px 7%;
+  padding:60px 7%;
 }
 
 h2{
   text-align:center;
-  font-size:38px;
-  margin:0 0 35px;
+  font-size:36px;
+  margin-bottom:35px;
 }
 
 .grid{
@@ -110,22 +104,17 @@ h2{
 
 .card{
   background:white;
-  padding:28px;
+  padding:25px;
   border-radius:18px;
-  box-shadow:
-    0 8px 30px rgba(0,0,0,.08);
   text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
 .icon{
-  font-size:38px;
+  font-size:40px;
 }
 
-.cars .card{
-  text-align:left;
-}
-
-.cars .card img{
+.cars img{
   width:100%;
   border-radius:12px;
 }
@@ -139,90 +128,86 @@ h2{
   max-width:850px;
   margin:auto;
   text-align:center;
-  font-size:18px;
   line-height:1.7;
+  font-size:18px;
 }
 
-.contact{
+.booking-section{
   background:#eef2ff;
 }
 
-.booking-wrap{
+.booking-box{
   max-width:900px;
-  margin:0 auto;
+  margin:auto;
   background:#07143d;
+  padding:30px;
+  border-radius:22px;
   color:white;
-  padding:32px;
-  border-radius:24px;
-  box-shadow:
-    0 18px 45px rgba(7,20,61,.18);
 }
 
-.booking-title{
-  text-align:center;
-  margin:0 0 6px;
-  font-size:34px;
+.booking-box h2{
+  margin-bottom:8px;
 }
 
-.booking-subtitle{
+.subtitle{
   text-align:center;
-  margin:0 0 24px;
-  color:#dbe3ff;
+  color:#dce3ff;
+  margin-bottom:25px;
 }
 
 .booking-form{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px;
+  gap:15px;
 }
 
-.booking-field input,
-.booking-field select{
+.field{
   width:100%;
-  padding:15px 16px;
-  border:0;
-  border-radius:10px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  display:block;
+  margin-bottom:6px;
+  font-size:14px;
+  font-weight:bold;
+  color:#dce3ff;
+}
+
+.field input,
+.field select{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:9px;
   font-size:16px;
   outline:none;
-  background:white;
-  color:#0b1748;
 }
 
-.booking-field label{
-  display:block;
-  color:#dbe3ff;
-  font-weight:700;
-  font-size:14px;
-  margin:0 0 6px 4px;
-}
-
-.booking-field.full{
+.submit-btn{
   grid-column:1/-1;
-}
-
-.booking-submit{
-  grid-column:1/-1;
-  width:100%;
-  border:0;
+  border:none;
+  padding:16px;
+  border-radius:9px;
   background:#ffd21c;
   color:#07143d;
-  padding:16px;
-  border-radius:10px;
   font-size:18px;
-  font-weight:800;
+  font-weight:bold;
   cursor:pointer;
 }
 
-.booking-submit:disabled{
-  opacity:.7;
-  cursor:not-allowed;
+.submit-btn:disabled{
+  opacity:.6;
 }
 
-.booking-note{
+.note{
   text-align:center;
+  color:#cbd5f5;
   font-size:13px;
-  color:#c8d2f5;
-  margin:12px 0 0;
+  margin-top:12px;
 }
 
 footer{
@@ -240,37 +225,28 @@ footer{
   }
 
   nav a{
-    margin:0 7px;
+    margin:0 6px;
   }
 
   .hero{
-    min-height:560px;
+    min-height:500px;
     padding:45px 6%;
-  }
-
-  .hero p{
-    font-size:18px;
-  }
-
-  .booking-wrap{
-    padding:22px 16px;
   }
 
   .booking-form{
     grid-template-columns:1fr;
   }
 
-  .booking-field.full,
-  .booking-submit{
+  .field.full,
+  .submit-btn{
     grid-column:auto;
   }
 
-  .booking-title{
-    font-size:28px;
+  .booking-box{
+    padding:20px 15px;
   }
 
 }
-
 </style>
 </head>
 
@@ -287,23 +263,10 @@ footer{
   </div>
 
   <div>
-
-    <a href="#services">
-      Services
-    </a>
-
-    <a href="#cars">
-      Cars
-    </a>
-
-    <a href="#about">
-      About
-    </a>
-
-    <a href="#contact">
-      Contact
-    </a>
-
+    <a href="#services">Services</a>
+    <a href="#cars">Cars</a>
+    <a href="#about">About</a>
+    <a href="#booking">Booking</a>
   </div>
 
 </nav>
@@ -311,7 +274,7 @@ footer{
 
 <!-- HERO -->
 
-<header class="hero">
+<section class="hero">
 
   <div>
 
@@ -328,474 +291,388 @@ footer{
     <a
       class="btn"
       href="tel:+918143344418">
-
       📞 Call Now
-
     </a>
 
     <a
       class="btn"
       href="https://wa.me/918143344418"
       target="_blank">
-
       💬 WhatsApp
-
     </a>
 
   </div>
 
-</header>
+</section>
 
 
 <!-- SERVICES -->
 
 <section id="services">
 
-  <h2>
-    Our Services
-  </h2>
+<h2>Our Services</h2>
 
-  <div class="grid">
+<div class="grid">
 
-
-    <div class="card">
-
-      <div class="icon">
-        🚗
-      </div>
-
-      <h3>
-        Car Rental with Driver
-      </h3>
-
-      <p>
-        Comfortable rides for local
-        and long-distance travel.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">
-        🛣️
-      </div>
-
-      <h3>
-        Outstation Trips
-      </h3>
-
-      <p>
-        One-way and round-trip
-        travel solutions.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">
-        ✈️
-      </div>
-
-      <h3>
-        Airport Transfers
-      </h3>
-
-      <p>
-        Convenient pickup and
-        drop services.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">
-        👨‍👩‍👧
-      </div>
-
-      <h3>
-        Family Trips
-      </h3>
-
-      <p>
-        Safe and comfortable
-        travel for families.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">
-        🏢
-      </div>
-
-      <h3>
-        Corporate Travel
-      </h3>
-
-      <p>
-        Reliable travel support
-        for business needs.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">
-        ↔️
-      </div>
-
-      <h3>
-        One-way / Round Trips
-      </h3>
-
-      <p>
-        Flexible travel plans
-        at affordable pricing.
-      </p>
-
-    </div>
-
-
+  <div class="card">
+    <div class="icon">🚗</div>
+    <h3>Car Rental with Driver</h3>
+    <p>
+      Comfortable rides for local
+      and long-distance travel.
+    </p>
   </div>
+
+  <div class="card">
+    <div class="icon">🛣️</div>
+    <h3>Outstation Trips</h3>
+    <p>
+      One-way and round-trip
+      travel solutions.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon">✈️</div>
+    <h3>Airport Transfers</h3>
+    <p>
+      Convenient pickup and
+      drop services.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon">👨‍👩‍👧</div>
+    <h3>Family Trips</h3>
+    <p>
+      Safe and comfortable
+      travel for families.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon">🏢</div>
+    <h3>Corporate Travel</h3>
+    <p>
+      Reliable business travel
+      support.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon">↔️</div>
+    <h3>One-way / Round Trips</h3>
+    <p>
+      Flexible travel plans.
+    </p>
+  </div>
+
+</div>
 
 </section>
 
 
 <!-- CARS -->
 
-<section
-  id="cars"
-  class="cars">
+<section id="cars" class="cars">
 
-  <h2>
-    Our Cars
-  </h2>
+<h2>Our Cars</h2>
 
-  <div class="grid">
+<div class="grid">
 
+  <div class="card">
 
-    <div class="card">
+    <img
+      src="hero.png"
+      alt="Honda Amaze">
 
-      <img
-        src="hero.png"
-        alt="Honda Amaze">
+    <h3>Honda Amaze</h3>
 
-      <h3>
-        Honda Amaze
-      </h3>
-
-      <p>
-        Comfortable • Safe • Reliable
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      <img
-        src="hero.png"
-        alt="Maruti Swift">
-
-      <h3>
-        Maruti Swift
-      </h3>
-
-      <p>
-        Stylish • Smooth Drive •
-        Fuel Efficient
-      </p>
-
-    </div>
-
+    <p>
+      Comfortable • Safe • Reliable
+    </p>
 
   </div>
+
+
+  <div class="card">
+
+    <img
+      src="hero.png"
+      alt="Maruti Swift">
+
+    <h3>Maruti Swift</h3>
+
+    <p>
+      Stylish • Smooth • Fuel Efficient
+    </p>
+
+  </div>
+
+</div>
 
 </section>
 
 
 <!-- ABOUT -->
 
-<section
-  id="about"
-  class="about">
+<section id="about" class="about">
 
-  <h2>
-    About Advithi Travel Agency
-  </h2>
+<h2>About Advithi Travel Agency</h2>
 
-  <p>
+<p>
+Advithi Travel Agency provides safe,
+reliable and affordable travel solutions
+in Tangutur and Ongole.
 
-    Advithi Travel Agency provides
-    safe, reliable and affordable
-    travel solutions in Tangutur
-    and Ongole.
-
-    Whether it is a local ride,
-    airport transfer, family trip
-    or outstation journey, our goal
-    is to make every trip comfortable
-    and stress-free.
-
-  </p>
+Whether it is a local ride, airport transfer,
+family trip or outstation journey, our goal
+is to make every trip comfortable and
+stress-free.
+</p>
 
 </section>
 
 
 <!-- BOOKING -->
 
-<section
-  id="contact"
-  class="contact">
+<section id="booking" class="booking-section">
 
+<div class="booking-box">
 
-  <div class="booking-wrap">
+<h2>🚗 Book Your Ride</h2>
 
+<p class="subtitle">
+Comfortable Ride • Safe Journey
+</p>
 
-    <h2 class="booking-title">
 
-      🚗 Book Your Ride
+<form
+  id="bookingForm"
+  class="booking-form"
+  onsubmit="sendBooking(event)"
+>
 
-    </h2>
 
+<!-- NAME -->
 
-    <p class="booking-subtitle">
+<div class="field">
 
-      Comfortable Ride • Safe Journey
+<label>
+Customer Name
+</label>
 
-    </p>
+<input
+  id="customerName"
+  type="text"
+  placeholder="Enter your name"
+  required>
 
+</div>
 
-    <form
-      class="booking-form"
-      onsubmit="sendBooking(event)">
 
+<!-- PHONE -->
 
-      <!-- NAME -->
+<div class="field">
 
-      <div class="booking-field">
+<label>
+Phone Number
+</label>
 
-        <input
-          id="customerName"
-          type="text"
-          placeholder="Your Name"
-          required>
+<input
+  id="phone"
+  type="tel"
+  placeholder="10 digit mobile number"
+  maxlength="10"
+  pattern="[0-9]{10}"
+  required>
 
-      </div>
+</div>
 
 
-      <!-- PHONE -->
+<!-- EMAIL -->
 
-      <div class="booking-field">
+<div class="field">
 
-        <input
-          id="phone"
-          type="tel"
-          placeholder="Phone Number"
-          pattern="[0-9]{10}"
-          maxlength="10"
-          required>
+<label>
+Email Address
+</label>
 
-      </div>
+<input
+  id="email"
+  type="email"
+  placeholder="Enter email"
+  required>
 
+</div>
 
-      <!-- EMAIL -->
 
-      <div class="booking-field">
+<!-- PICKUP -->
 
-        <input
-          id="email"
-          type="email"
-          placeholder="Email Address"
-          required>
+<div class="field">
 
-      </div>
+<label>
+📍 Pickup Location
+</label>
 
+<input
+  id="pickup"
+  type="text"
+  placeholder="Enter pickup location"
+  required>
 
-      <!-- PICKUP -->
+</div>
 
-      <div class="booking-field">
 
-        <label for="pickup">
-          📍 Pick Up Location
-        </label>
+<!-- DESTINATION -->
 
-        <input
-          id="pickup"
-          type="text"
-          placeholder="Enter pickup location"
-          required>
+<div class="field">
 
-      </div>
+<label>
+📍 Destination
+</label>
 
+<input
+  id="destination"
+  type="text"
+  placeholder="Enter destination"
+  required>
 
-      <!-- DESTINATION -->
+</div>
 
-      <div class="booking-field">
 
-        <label for="destination">
-          📍 Drop Off Location
-        </label>
+<!-- DATE -->
 
-        <input
-          id="destination"
-          type="text"
-          placeholder="Enter drop off location"
-          required>
+<div class="field">
 
-      </div>
+<label>
+📅 Date
+</label>
 
+<input
+  id="pickupDate"
+  type="date"
+  required>
 
-      <!-- DATE -->
+</div>
 
-      <div class="booking-field">
 
-        <label for="pickupDate">
-          📅 Pick Up Date
-        </label>
+<!-- TIME -->
 
-        <input
-          id="pickupDate"
-          type="date"
-          required>
+<div class="field">
 
-      </div>
+<label>
+⏰ Time
+</label>
 
+<input
+  id="pickupTime"
+  type="time"
+  required>
 
-      <!-- TIME -->
+</div>
 
-      <div class="booking-field">
 
-        <label for="pickupTime">
-          ⏰ Pick Up Time
-        </label>
+<!-- CAR -->
 
-        <input
-          id="pickupTime"
-          type="time"
-          required>
+<div class="field">
 
-      </div>
+<label>
+🚗 Choose Car
+</label>
 
+<select
+  id="car"
+  required>
 
-      <!-- CAR -->
+  <option value="">
+    Select Car
+  </option>
 
-      <div class="booking-field">
+  <option>
+    Honda Amaze
+  </option>
 
-        <select
-          id="car"
-          required>
+  <option>
+    Maruti Swift
+  </option>
 
-          <option value="">
-            Choose Car
-          </option>
+</select>
 
-          <option>
-            Honda Amaze
-          </option>
+</div>
 
-          <option>
-            Maruti Swift
-          </option>
 
-        </select>
+<!-- TRAVELERS -->
 
-      </div>
+<div class="field">
 
+<label>
+👥 Travelers
+</label>
 
-      <!-- TRAVELERS -->
+<select
+  id="travelers"
+  required>
 
-      <div class="booking-field">
+  <option value="">
+    Select Travelers
+  </option>
 
-        <select
-          id="travelers"
-          required>
+  <option>1 Traveler</option>
+  <option>2 Travelers</option>
+  <option>3 Travelers</option>
+  <option>4 Travelers</option>
+  <option>5+ Travelers</option>
 
-          <option value="">
-            Travelers
-          </option>
+</select>
 
-          <option>
-            1 Traveler
-          </option>
+</div>
 
-          <option>
-            2 Travelers
-          </option>
 
-          <option>
-            3 Travelers
-          </option>
+<!-- NOTES -->
 
-          <option>
-            4 Travelers
-          </option>
+<div class="field full">
 
-          <option>
-            5+ Travelers
-          </option>
+<label>
+Additional Details
+</label>
 
-        </select>
+<input
+  id="notes"
+  type="text"
+  placeholder="Any additional requirements">
 
-      </div>
+</div>
 
 
-      <!-- NOTES -->
+<!-- SUBMIT -->
 
-      <div
-        class="booking-field full">
+<button
+  id="submitButton"
+  class="submit-btn"
+  type="submit">
 
-        <input
-          id="notes"
-          type="text"
-          placeholder="Extra details (optional)">
+  📲 Send Booking Request
 
-      </div>
+</button>
 
+</form>
 
-      <!-- SUBMIT -->
 
-      <button
-        class="booking-submit"
-        type="submit">
+<p class="note">
+Your booking request will be reviewed by
+Advithi Travel Agency.
+</p>
 
-        📲 Confirm Booking Request →
-
-      </button>
-
-
-    </form>
-
-
-    <p class="booking-note">
-
-      Booking request will be sent
-      to Advithi Travel Agency.
-
-    </p>
-
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-  © 2026 Advithi Travel Agency
-  • Tangutur & Ongole
+© 2026 Advithi Travel Agency •
+Tangutur & Ongole
 
 </footer>
 
@@ -805,19 +682,19 @@ footer{
 
 
 /*
-==================================================
-GOOGLE APPS SCRIPT WEB APP URL
-==================================================
+====================================================
+NEW APPS SCRIPT WEB APP URL
+====================================================
 */
 
 const BOOKING_API_URL =
-"https://script.google.com/macros/s/AKfycbyJ4InvL5zMOgeEtyt70dbyd23u-9aixsjg6Pf4Z-ECxXvNOx3UNfQeVmYiNCaelSt4/exec";
+"https://script.google.com/macros/s/AKfycbx3NTcptTtFCPcVTgF6YCuplSFO8DBpKmRBOlt86gmT0vulIGbjlW77UCYcq6OejI-F/exec";
 
 
 /*
-==================================================
+====================================================
 BOOKING FUNCTION
-==================================================
+====================================================
 */
 
 async function sendBooking(event){
@@ -825,7 +702,7 @@ async function sendBooking(event){
   event.preventDefault();
 
 
-  const getValue = (id) => {
+  const get = (id) => {
 
     const element =
       document.getElementById(id);
@@ -838,72 +715,66 @@ async function sendBooking(event){
 
 
   const button =
-    document.querySelector(
-      ".booking-submit"
+    document.getElementById(
+      "submitButton"
     );
 
 
   /*
-  -----------------------------------------------
-  GET CUSTOMER DATA
-  -----------------------------------------------
+  GET BOOKING DETAILS
   */
 
-  const payload = {
+  const booking = {
 
     customerName:
-      getValue("customerName"),
+      get("customerName"),
 
     phone:
-      getValue("phone"),
+      get("phone"),
 
     email:
-      getValue("email"),
+      get("email"),
 
     pickup:
-      getValue("pickup"),
+      get("pickup"),
 
     destination:
-      getValue("destination"),
+      get("destination"),
 
     pickupDate:
-      getValue("pickupDate"),
+      get("pickupDate"),
 
     pickupTime:
-      getValue("pickupTime"),
+      get("pickupTime"),
 
     car:
-      getValue("car"),
+      get("car"),
 
     travelers:
-      getValue("travelers"),
+      get("travelers"),
 
     notes:
-      getValue("notes")
+      get("notes")
 
   };
 
 
   /*
-  -----------------------------------------------
   DISABLE BUTTON
-  -----------------------------------------------
   */
 
   button.disabled = true;
 
   button.textContent =
-    "⏳ Sending Booking...";
+    "⏳ Sending Request...";
 
-
-  /*
-  -----------------------------------------------
-  SEND TO GOOGLE APPS SCRIPT
-  -----------------------------------------------
-  */
 
   try{
 
+
+    /*
+    SEND BOOKING TO APPS SCRIPT
+    */
 
     await fetch(
 
@@ -916,14 +787,12 @@ async function sendBooking(event){
         mode:"no-cors",
 
         headers:{
-
           "Content-Type":
-            "text/plain;charset=utf-8"
-
+          "text/plain;charset=utf-8"
         },
 
         body:
-          JSON.stringify(payload)
+        JSON.stringify(booking)
 
       }
 
@@ -931,9 +800,7 @@ async function sendBooking(event){
 
 
     /*
-    ---------------------------------------------
     SUCCESS MESSAGE
-    ---------------------------------------------
     */
 
     alert(
@@ -943,37 +810,34 @@ async function sendBooking(event){
       "Your request has been received by " +
       "Advithi Travel Agency.\n\n" +
 
-      "We will review your request and " +
-      "contact you shortly."
+      "You will receive confirmation after " +
+      "your booking is reviewed."
 
     );
 
 
     /*
-    ---------------------------------------------
     RESET FORM
-    ---------------------------------------------
     */
 
     document
-      .querySelector(".booking-form")
+      .getElementById("bookingForm")
       .reset();
 
 
     /*
     IMPORTANT:
-    NO WHATSAPP AUTOMATIC OPENING HERE.
+    NO AUTOMATIC WHATSAPP OPENING.
     */
 
 
   }
 
-
   catch(error){
 
 
     console.error(
-      "Booking Error:",
+      "Booking error:",
       error
     );
 
@@ -981,23 +845,19 @@ async function sendBooking(event){
     alert(
 
       "❌ Booking could not be sent.\n\n" +
-
-      "Please call Advithi Travel Agency."
+      "Please try again or call us."
 
     );
-
 
   }
 
 
   finally{
 
-
     button.disabled = false;
 
     button.textContent =
-      "📲 Confirm Booking Request →";
-
+      "📲 Send Booking Request";
 
   }
 
