@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advithi Travel Agency | Car Rentals</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#222}
+nav{background:#07143d;color:#fff;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}.logo{font-size:22px;font-weight:800}nav a{color:#fff;text-decoration:none;margin-left:16px;font-weight:bold}
+.hero{background:linear-gradient(135deg,#07143d,#123d76);color:#fff;text-align:center;padding:55px 20px 40px}.hero h1{font-size:clamp(40px,7vw,70px);line-height:1.1;margin:0}.hero p{font-size:20px;line-height:1.6}.hero-buttons{display:flex;justify-content:center;gap:12px}.hero-buttons a{padding:13px 22px;border-radius:9px;text-decoration:none;font-weight:bold;color:#fff}.call{background:#123d76}.wa{background:#25D366}
+.booking{background:#eef2f7;padding:25px 6% 60px}.box{max-width:900px;margin:auto;background:#fff;padding:30px;border-radius:20px;box-shadow:0 8px 30px #0002}.title{text-align:center;color:#07143d;font-size:32px;margin:0 0 8px}.sub{text-align:center;color:#666;margin-bottom:28px}.form{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column}.full,.btn,.status,.fare{grid-column:1/-1}.field label{font-weight:bold;color:#07143d;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;padding:14px;border:1px solid #ccc;border-radius:9px;font-size:16px;background:#fff}.field textarea{min-height:90px}.btn{border:0;border-radius:10px;padding:16px;color:#fff;font-size:17px;font-weight:bold;cursor:pointer;background:#123d76}.btn:disabled{opacity:.6}.pay{background:#16803c;display:none}.book{background:#07143d;display:none}.status{text-align:center;font-weight:bold;color:#555;min-height:22px}.fare{display:none;background:#f0f7ff;border:2px solid #123d76;border-radius:14px;padding:20px}.fare h3{text-align:center;color:#07143d}.row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #d8e0ea}.total{font-size:21px;font-weight:bold}.advance{font-size:20px;font-weight:bold;color:#16803c}.note{text-align:center;color:#666;font-size:13px;line-height:1.7}
+section{padding:65px 7%}section h2{text-align:center;font-size:32px;margin:0 0 35px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}.card{background:#fff;padding:28px;border-radius:15px;box-shadow:0 5px 20px #0001;text-align:center}.icon{font-size:42px}.cars{background:#eef2f7}.about{background:#07143d;color:#fff;text-align:center}.about p{max-width:850px;margin:auto;font-size:18px;line-height:1.8}.contact{background:#eaf7f0;text-align:center}.contact a{display:inline-block;margin:8px;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:bold;background:#07143d;color:#fff}footer{background:#050f2e;color:#fff;text-align:center;padding:25px}
+.location-autocomplete-wrap{position:relative;width:100%}.location-suggestions{position:absolute;left:0;right:0;top:calc(100% + 2px);z-index:99999;background:#fff;border:1px solid #d7d7d7;border-radius:0 0 12px 12px;box-shadow:0 10px 25px rgba(0,0,0,.18);max-height:260px;overflow-y:auto;display:none;text-align:left;-webkit-overflow-scrolling:touch}.location-suggestion{padding:14px 15px;border-top:1px solid #eee;cursor:pointer;font-size:15px;line-height:1.35;color:#17244f;background:#fff;touch-action:manipulation}.location-suggestion:first-child{border-top:0}.location-suggestion:active{background:#eef4ff}.location-suggestion small{display:block;color:#777;font-size:12px;margin-top:4px}.location-loading{padding:13px 15px;color:#777;font-size:14px}
+@media(max-width:700px){nav{flex-direction:column;gap:12px}nav a{margin-left:8px;margin-right:8px}.hero h1{font-size:42px}.hero p{font-size:17px}.form{grid-template-columns:1fr}.full,.btn,.status,.fare{grid-column:auto}.box{padding:22px 16px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">🚗 Advithi Travel Agency</div><div><a href="#booking">Book</a><a href="#services">Services</a><a href="#cars">Cars</a><a href="#contact">Contact</a></div></nav>
+<header class="hero"><h1>Comfortable Rides.<br>Safe Journeys.</h1><p>Car Rentals &amp; Outstation Trips<br>Tangutur &amp; Ongole</p><div class="hero-buttons"><a class="call" href="tel:+918143344418">📞 Call Us</a><a class="wa" href="https://wa.me/918143344418" target="_blank" rel="noopener">💬 WhatsApp</a></div></header>
+
+<section id="booking" class="booking"><div class="box">
+<h2 class="title">🚗 Book Your Ride</h2>
+<p class="sub">Up to 150 KM: booking request only. Above 150 KM: 20% advance payment.</p>
+<form id="bookingForm" class="form" onsubmit="startBooking(event)">
+<div class="field"><label>Customer Name</label><input id="customerName" required placeholder="Enter your name"></div>
+<div class="field"><label>Phone Number</label><input id="phone" type="tel" pattern="[0-9]{10}" maxlength="10" required placeholder="10 digit number"></div>
+<div class="field"><label>Email *</label><input id="email" type="email" required placeholder="Enter email"></div>
+<div class="field"><label>📍 Pickup Location</label><div class="location-autocomplete-wrap"><input id="pickup" required placeholder="Example: Tangutur" autocomplete="off"><div id="pickup-suggestions" class="location-suggestions"></div></div></div>
+<div class="field"><label>📍 Destination</label><div class="location-autocomplete-wrap"><input id="destination" required placeholder="Example: Hyderabad" autocomplete="off"><div id="destination-suggestions" class="location-suggestions"></div></div></div>
+<div class="field"><label>📅 Travel Date</label><input id="pickupDate" type="date" required></div>
+<div class="field"><label>📅 Return Date</label><input id="returnDate" type="date" required></div>
+<div class="field"><label>⏰ Travel Time</label><input id="pickupTime" type="time" required></div>
+<div class="field"><label>🚗 Choose Car</label><select id="car" required><option value="">Choose Car</option><option>Honda Amaze</option><option>Maruti Swift</option><option>Maruti Ertiga</option><option>Toyota Etios</option></select></div>
+<div class="field"><label>👥 Travelers</label><select id="travelers" required><option value="">Select Travelers</option><option>1 Traveler</option><option>2 Travelers</option><option>3 Travelers</option><option>4 Travelers</option><option>5 Travelers</option><option>6 Travelers</option><option>7 Travelers</option></select></div>
+<div class="field full"><label>Additional Details</label><textarea id="notes" placeholder="Any special requirements?"></textarea></div>
+
+<button type="button" id="calc" class="btn" onclick="calculateFare()">🛣️ Calculate Distance &amp; Fare</button>
+<div id="status" class="status"></div>
+<div id="fare" class="fare">
+<h3>💰 Trip Fare</h3>
+<div class="row"><span>One-way Distance</span><b id="one">-</b></div>
+<div class="row"><span>Round Trip Distance</span><b id="round">-</b></div>
+<div class="row"><span>Car Rate</span><b id="rate">-</b></div>
+<div class="row total"><span>Total Fare</span><b id="total">-</b></div>
+<div class="row advance"><span>20% Advance (only above 150 KM)</span><b id="adv">-</b></div>
+</div>
+<button type="submit" id="book" class="btn book">📩 Book Now — No Advance Payment</button>
+<button type="submit" id="pay" class="btn pay">💳 Pay 20% Advance &amp; Request Booking</button>
+</form>
+<p class="note">🔒 Above 150 KM: secure payment through Razorpay<br>UPI • Google Pay • PhonePe • Paytm • Cards • Netbanking</p>
+</div></section>
+
+<section id="services"><h2>Our Services</h2><div class="grid">
+<div class="card"><div class="icon">🚗</div><h3>Car Rentals</h3><p>Comfortable cars for your travel needs.</p></div>
+<div class="card"><div class="icon">🛣️</div><h3>Outstation Trips</h3><p>Safe and reliable long-distance travel.</p></div>
+<div class="card"><div class="icon">✈️</div><h3>Airport Trips</h3><p>Convenient airport pickup and drop.</p></div>
+<div class="card"><div class="icon">👨‍👩‍👧‍👦</div><h3>Family Trips</h3><p>Comfortable travel for families and groups.</p></div>
+<div class="card"><div class="icon">🏢</div><h3>Corporate Travel</h3><p>Reliable transportation for business trips.</p></div>
+<div class="card"><div class="icon">↔️</div><h3>Round Trips</h3><p>Easy and comfortable return travel.</p></div>
+</div></section>
+
+<section id="cars" class="cars"><h2>Our Cars</h2><div class="grid">
+<div class="card"><div class="icon">🚘</div><h3>Honda Amaze</h3><p>₹16/km<br>Comfortable &amp; economical</p></div>
+<div class="card"><div class="icon">🚙</div><h3>Maruti Swift</h3><p>₹15/km<br>Perfect for city &amp; trips</p></div>
+<div class="card"><div class="icon">🚐</div><h3>Maruti Ertiga</h3><p>₹20/km<br>Ideal for families &amp; groups</p></div>
+<div class="card"><div class="icon">🚗</div><h3>Toyota Etios</h3><p>₹16/km<br>Comfortable &amp; reliable</p></div>
+</div></section>
+
+<section class="about"><h2>About Advithi Travel Agency</h2><p>Advithi Travel Agency provides comfortable, safe and reliable car rental services for local, airport and outstation travel. Our goal is to make every journey simple and comfortable for our customers.</p></section>
+<section id="contact" class="contact"><h2>Contact Us</h2><p>📞 8143344418</p><a href="tel:+918143344418">📞 Call Us</a><a href="https://wa.me/918143344418" target="_blank" rel="noopener">💬 WhatsApp</a></section>
+<footer>© 2026 Advithi Travel Agency • Tangutur &amp; Ongole</footer>
+
+<script>
+const PAYMENT_API_URL="https://script.google.com/macros/s/AKfycbwFOd8mhnv1nCtlArqiIL1R73cQK0cFPak8VLhpkBgB8t2Li1Yk_fnCx6hLlHqat8Sr1Q/exec";
+const RATES={"Honda Amaze":16,"Maruti Swift":15,"Maruti Ertiga":20,"Toyota Etios":16};
+const APPROVAL_LIMIT=150;
+let fare=null;
+
+async function locate(q){
+ const r=await fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=in&q="+encodeURIComponent(q));
+ if(!r.ok)throw new Error("Location search failed.");
+ const a=await r.json();
+ return a.length?{lat:a[0].lat,lon:a[0].lon}:null;
+}
+
+async function calculateFare(){
+ const p=document.getElementById("pickup").value.trim();
+ const d=document.getElementById("destination").value.trim();
+ const c=document.getElementById("car").value;
+ if(!p||!d||!c){alert("Please enter pickup, destination and car.");return;}
+ const b=document.getElementById("calc"),s=document.getElementById("status");
+ b.disabled=true;b.textContent="⏳ Calculating...";s.textContent="Finding road distance...";
+ try{
+  const [a,z]=await Promise.all([locate(p),locate(d)]);
+  if(!a||!z)throw new Error("Location not found. Please select valid locations.");
+  const u="https://router.project-osrm.org/route/v1/driving/"+a.lon+","+a.lat+";"+z.lon+","+z.lat+"?overview=false";
+  const r=await fetch(u);if(!r.ok)throw new Error("Road distance service unavailable.");
+  const x=await r.json();if(!x.routes?.length)throw new Error("Route not found.");
+  const one=Math.ceil(x.routes[0].distance/1000),round=one*2,total=Math.round(round*RATES[c]),adv=Math.round(total*.2);
+  fare={distance:round,totalFare:total,advanceAmount:adv,car:c};
+  document.getElementById("one").textContent=one+" KM";
+  document.getElementById("round").textContent=round+" KM";
+  document.getElementById("rate").textContent="₹"+RATES[c]+"/km";
+  document.getElementById("total").textContent="₹"+total.toLocaleString("en-IN");
+  document.getElementById("adv").textContent=round>APPROVAL_LIMIT?"₹"+adv.toLocaleString("en-IN"):"Not required";
+  document.getElementById("fare").style.display="block";
+  document.getElementById("book").style.display=round<=APPROVAL_LIMIT?"block":"none";
+  document.getElementById("pay").style.display=round>APPROVAL_LIMIT?"block":"none";
+  s.textContent=round<=APPROVAL_LIMIT
+   ?"✅ "+round+" KM — No advance payment required. Tap Book Now."
+   :"✅ "+round+" KM — 20% advance payment is required.";
+ }catch(e){s.textContent="";alert("❌ "+e.message);}
+ finally{b.disabled=false;b.textContent="🛣️ Calculate Distance & Fare";}
+}
+
+function startBooking(e){
+ e.preventDefault();
+ if(!fare){alert("Please calculate the distance and fare first.");return;}
+ const name=document.getElementById("customerName").value.trim();
+ const phone=document.getElementById("phone").value.trim();
+ const email=document.getElementById("email").value.trim();
+ if(!name||!/^\d{10}$/.test(phone)||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+  alert("Please enter valid customer name, 10 digit phone and email.");return;
+ }
+
+ const action=fare.distance<=APPROVAL_LIMIT?"submitBooking":"createPaymentLink";
+ const data={
+  action:action,
+  customerName:name,
+  phone:phone,
+  email:email,
+  pickup:document.getElementById("pickup").value.trim(),
+  destination:document.getElementById("destination").value.trim(),
+  travelDate:document.getElementById("pickupDate").value,
+  returnDate:document.getElementById("returnDate").value,
+  travelTime:document.getElementById("pickupTime").value,
+  car:fare.car,
+  travelers:document.getElementById("travelers").value,
+  distanceKm:fare.distance,
+  notes:document.getElementById("notes").value.trim()
+ };
+
+ const btn=document.getElementById(action==="submitBooking"?"book":"pay");
+ btn.disabled=true;
+ btn.textContent=action==="submitBooking"?"⏳ Sending Booking...":"⏳ Creating Payment...";
+
+ const f=document.createElement("form");
+ f.method="POST";f.action=PAYMENT_API_URL;f.style.display="none";
+ Object.keys(data).forEach(k=>{const i=document.createElement("input");i.type="hidden";i.name=k;i.value=data[k];f.appendChild(i);});
+ document.body.appendChild(f);f.submit();
+}
+
+(function(){
+ const t=new Date(),v=t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")+"-"+String(t.getDate()).padStart(2,"0");
+ const pickupDate=document.getElementById("pickupDate"),returnDate=document.getElementById("returnDate");
+ pickupDate.min=v;returnDate.min=v;
+ pickupDate.addEventListener("change",function(){
+  returnDate.min=pickupDate.value;
+  if(returnDate.value&&returnDate.value<pickupDate.value)returnDate.value=pickupDate.value;
+ });
+})();
+
+["pickup","destination","car","pickupDate","returnDate"].forEach(id=>{
+ document.getElementById(id).addEventListener("change",()=>{
+  fare=null;
+  document.getElementById("fare").style.display="none";
+  document.getElementById("book").style.display="none";
+  document.getElementById("pay").style.display="none";
+  document.getElementById("status").textContent="";
+ });
+});
+
+// iPhone-friendly location autocomplete
+(function(){
+ const API="https://nominatim.openstreetmap.org/search";
+ function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+ function setup(kind){
+  const input=document.getElementById(kind);
+  const box=document.getElementById(kind+"-suggestions");
+  if(!input||!box)return;
+  let timer=null,controller=null,selecting=false;
+
+  function close(){box.style.display="none";box.innerHTML="";}
+  function selectPlace(place){
+   if(selecting)return;
+   selecting=true;
+   input.value=place.display_name||"";
+   close();
+   input.dispatchEvent(new Event("change",{bubbles:true}));
+   input.dispatchEvent(new Event("input",{bubbles:true}));
+   setTimeout(()=>{input.blur();selecting=false;},80);
+  }
+
+  async function search(){
+   const q=input.value.trim();
+   if(q.length<2){close();return;}
+   if(controller)controller.abort();
+   controller=new AbortController();
+   box.innerHTML='<div class="location-loading">Searching locations...</div>';
+   box.style.display="block";
+   try{
+    const u=API+"?"+new URLSearchParams({q:q,format:"jsonv2",addressdetails:"1",limit:"6",countrycodes:"in","accept-language":"en"});
+    const r=await fetch(u,{signal:controller.signal,headers:{Accept:"application/json"}});
+    if(!r.ok)throw new Error();
+    const data=await r.json();
+    if(input.value.trim()!==q)return;
+    box.innerHTML="";
+    if(!data.length){box.innerHTML='<div class="location-loading">No matching places found</div>';box.style.display="block";return;}
+    data.forEach(place=>{
+     const item=document.createElement("div");
+     item.className="location-suggestion";
+     const parts=(place.display_name||"").split(",").map(s=>s.trim());
+     item.innerHTML="<b>"+esc(parts.slice(0,2).join(", "))+"</b><small>"+esc(parts.slice(2,5).join(", "))+"</small>";
+     item.addEventListener("pointerdown",ev=>{ev.preventDefault();ev.stopPropagation();selectPlace(place);});
+     item.addEventListener("touchstart",ev=>{ev.preventDefault();ev.stopPropagation();selectPlace(place);},{passive:false});
+     item.addEventListener("click",ev=>{ev.preventDefault();ev.stopPropagation();selectPlace(place);});
+     box.appendChild(item);
+    });
+    box.style.display="block";
+   }catch(e){
+    if(e.name==="AbortError")return;
+    box.innerHTML='<div class="location-loading">Unable to load suggestions</div>';
+    box.style.display="block";
+   }
+  }
+
+  input.addEventListener("input",()=>{selecting=false;clearTimeout(timer);timer=setTimeout(search,300);});
+  input.addEventListener("focus",()=>{if(input.value.trim().length>=2)search();});
+  input.addEventListener("blur",()=>setTimeout(()=>{if(!selecting)close();},350));
+  document.addEventListener("pointerdown",ev=>{if(ev.target!==input&&!box.contains(ev.target))close();});
+ }
+ setup("pickup");setup("destination");
+})();
+</script>
+</body>
+</html>
