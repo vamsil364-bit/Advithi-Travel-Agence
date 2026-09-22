@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advithi Travel Agency | Car Rental</title>
+<meta name="description" content="Advithi Travel Agency - Car rental and travel services in Tangutur and Ongole.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.5}
+header{background:#111827;color:#fff;padding:15px 20px;position:sticky;top:0;z-index:10}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:22px;font-weight:800}.logo span{color:#fbbf24}
+.nav a{color:#fff;text-decoration:none;padding:9px 13px;border-radius:8px;font-weight:bold;font-size:14px}
+.call{background:#16a34a}.wa{background:#25d366}
+.hero{min-height:420px;display:flex;align-items:center;justify-content:center;text-align:center;padding:45px 20px;color:#fff;background:linear-gradient(#0009,#0009),url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1600&q=80") center/cover}
+.hero h1{font-size:46px}.hero h1 span{color:#fbbf24}.hero p{font-size:19px;margin:10px 0 22px}
+.btn{display:inline-block;text-decoration:none;padding:14px 22px;border-radius:10px;font-weight:bold;margin:4px}.book{background:#fbbf24;color:#111827}.heroCall{background:#16a34a;color:#fff}
+.section{max-width:1100px;margin:auto;padding:45px 20px}.title{text-align:center;font-size:30px}.sub{text-align:center;color:#667085;margin:6px 0 28px}
+.cars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px #00000012}.card img{width:100%;height:155px;object-fit:cover}.card h3{padding:14px 15px 3px}.card p{padding:0 15px 17px;color:#667085}
+.booking{background:#111827;padding:50px 20px}.box{max-width:850px;margin:auto;background:#fff;border-radius:18px;padding:28px;box-shadow:0 10px 35px #0003}.box h2{text-align:center;font-size:29px}.box>p{text-align:center;color:#667085;margin-bottom:23px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.group{display:flex;flex-direction:column}.full{grid-column:1/-1}
+label{font-weight:bold;font-size:14px;margin-bottom:6px}input,select,textarea{border:1px solid #d0d5dd;border-radius:9px;padding:12px;font-size:15px;outline:none}
+.place-wrap{position:relative}
+.suggestions{display:none;position:absolute;left:0;right:0;top:100%;z-index:100;background:#fff;border:1px solid #d0d5dd;border-top:0;border-radius:0 0 10px 10px;max-height:230px;overflow-y:auto;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.suggestion-item{padding:11px 13px;cursor:pointer;border-bottom:1px solid #f1f5f9;font-size:14px}
+.suggestion-item:hover{background:#f8fafc}
+.suggestion-main{font-weight:700;color:#172033}
+.suggestion-sub{font-size:12px;color:#667085;margin-top:2px}textarea{min-height:95px;resize:vertical}
+.submit{width:100%;margin-top:18px;padding:14px;border:0;border-radius:10px;background:#f59e0b;color:#111827;font-size:17px;font-weight:800;cursor:pointer}.submit:disabled{opacity:.6}
+.msg{display:none;margin-top:15px;padding:14px;border-radius:9px;text-align:center;font-weight:bold}.success{background:#dcfce7;color:#166534}.error{background:#fee2e2;color:#991b1b}.loading{display:none;text-align:center;margin-top:12px;color:#475467}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info div{background:#f8fafc;padding:22px;text-align:center;border-radius:14px}.icon{font-size:32px;margin-bottom:8px}
+footer{background:#0b1120;color:#cbd5e1;text-align:center;padding:28px 20px}footer h3{color:#fff;margin-bottom:6px}footer a{color:#fbbf24}
+@media(max-width:800px){.cars{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.nav{flex-direction:column}.hero h1{font-size:34px}.grid,.info{grid-template-columns:1fr}.full{grid-column:auto}.cars{grid-template-columns:1fr}.box{padding:20px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav">
+<div class="logo">Advithi <span>Travel Agency</span></div>
+<div>
+<a class="call" href="tel:8143344418">📞 Call</a>
+<a class="wa" href="https://wa.me/918143344418" target="_blank">💬 WhatsApp</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div>
+<h1>Travel With <span>Advithi</span></h1>
+<p>Comfortable rides. Safe journey.</p>
+<p>Tangutur • Ongole • Andhra Pradesh</p>
+<a class="btn book" href="#booking">🚕 Book Your Ride</a>
+<a class="btn heroCall" href="tel:8143344418">📞 Call Now</a>
+</div>
+</section>
+
+
+
+<section class="booking" id="booking">
+<div class="box">
+<h2>🚕 Book Your Ride</h2>
+<p>Fill in your travel details and send your booking request.</p>
+
+<form id="bookingForm">
+<div class="grid">
+
+<div class="group"><label>Customer Name *</label><input name="customerName" required placeholder="Enter your name"></div>
+<div class="group"><label>Phone Number *</label><input name="phone" type="tel" required placeholder="Enter phone number"></div>
+<div class="group"><label>Email *</label><input name="email" type="email" required placeholder="Enter email address"></div>
+<div class="group place-group">
+<label>Pickup Location *</label>
+<div class="place-wrap">
+<input id="pickup" name="pickup" required autocomplete="off" placeholder="Type at least 3 characters">
+<div id="pickupSuggestions" class="suggestions"></div>
+</div>
+</div>
+
+<div class="group place-group">
+<label>Destination *</label>
+<div class="place-wrap">
+<input id="destination" name="destination" required autocomplete="off" placeholder="Type at least 3 characters">
+<div id="destinationSuggestions" class="suggestions"></div>
+</div>
+</div>
+<div class="group"><label>Travel Date *</label><input id="travelDate" name="travelDate" type="date" required></div>
+<div class="group"><label>Travel Time *</label><input name="travelTime" type="time" required></div>
+<div class="group"><label>Travelers *</label><select name="travelers" required><option value="">Select travelers</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10+</option></select></div>
+
+
+<div class="group"><label>Choose Car *</label><select name="car" required><option value="">Select a car</option><option>Honda Amaze</option><option>Maruti Swift</option><option>Maruti Ertiga</option><option>Toyota Etios</option></select></div>
+<div class="group full"><label>Additional Details</label><textarea name="notes" placeholder="Any additional requirements..."></textarea></div>
+
+</div>
+<button class="submit" id="submitBtn" type="submit">📩 Send Booking Request</button>
+<div class="loading" id="loading">⏳ Sending your booking request...</div>
+<div class="msg success" id="success">✅ Booking request sent successfully!<br>Our team will review it and you will receive an email after approval or rejection.</div>
+<div class="msg error" id="error">❌ Booking could not be submitted. Please call 8143344418.</div>
+</form>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">Our Cars</h2>
+<p class="sub">Choose your preferred car for your journey</p>
+<div class="cars">
+<div class="card"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%20500%22%3E%0A%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20x2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23dbeafe%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f8fafc%22/%3E%3C/linearGradient%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22body%22%20x1%3D%220%22%20x2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23e5e7eb%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffffff%22/%3E%3C/linearGradient%3E%0A%20%20%20%20%20%20%3C/defs%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%22500%22%20fill%3D%22url%28%23bg%29%22/%3E%0A%20%20%20%20%20%20%3Crect%20y%3D%22365%22%20width%3D%22900%22%20height%3D%22135%22%20fill%3D%22%23d1d5db%22/%3E%0A%20%20%20%20%20%20%3Cellipse%20cx%3D%22450%22%20cy%3D%22375%22%20rx%3D%22330%22%20ry%3D%2235%22%20fill%3D%22%2394a3b8%22%20opacity%3D%22.45%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M170%20335%20L205%20250%20Q220%20220%20265%20205%20L350%20165%20Q380%20150%20425%20150%20L565%20150%20Q610%20150%20640%20180%20L705%20230%20Q735%20250%20750%20300%20L770%20335%20Z%22%20fill%3D%22url%28%23body%29%22%20stroke%3D%22%23111827%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M285%20205%20L365%20170%20Q385%20162%20420%20162%20L555%20162%20Q595%20162%20620%20190%20L655%20225%20L285%20225%20Z%22%20fill%3D%22%2393c5fd%22%20stroke%3D%22%23111827%22%20stroke-width%3D%226%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M300%20205%20L365%20178%20L410%20178%20L410%20220%20L300%20220%20Z%22%20fill%3D%22%23bfdbfe%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M425%20178%20L550%20178%20Q590%20178%20615%20205%20L628%20220%20L425%20220%20Z%22%20fill%3D%22%23bfdbfe%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22275%22%20cy%3D%22337%22%20r%3D%2255%22%20fill%3D%22%23111827%22/%3E%3Ccircle%20cx%3D%22275%22%20cy%3D%22337%22%20r%3D%2225%22%20fill%3D%22%23cbd5e1%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22665%22%20cy%3D%22337%22%20r%3D%2255%22%20fill%3D%22%23111827%22/%3E%3Ccircle%20cx%3D%22665%22%20cy%3D%22337%22%20r%3D%2225%22%20fill%3D%22%23cbd5e1%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22710%22%20y%3D%22270%22%20width%3D%2228%22%20height%3D%2235%22%20rx%3D%226%22%20fill%3D%22%23fef08a%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22185%22%20y%3D%22270%22%20width%3D%2228%22%20height%3D%2235%22%20rx%3D%226%22%20fill%3D%22%23ef4444%22/%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22450%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%22%20font-size%3D%2242%22%20font-weight%3D%22700%22%20fill%3D%22%23111827%22%3EHonda%20Amaze%3C/text%3E%0A%20%20%20%20%3C/svg%3E"><h3>Honda Amaze</h3><p>Comfortable sedan for family travel.</p></div>
+<div class="card"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%20500%22%3E%0A%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20x2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23dbeafe%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f8fafc%22/%3E%3C/linearGradient%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22body%22%20x1%3D%220%22%20x2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ef4444%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffffff%22/%3E%3C/linearGradient%3E%0A%20%20%20%20%20%20%3C/defs%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%22500%22%20fill%3D%22url%28%23bg%29%22/%3E%0A%20%20%20%20%20%20%3Crect%20y%3D%22365%22%20width%3D%22900%22%20height%3D%22135%22%20fill%3D%22%23d1d5db%22/%3E%0A%20%20%20%20%20%20%3Cellipse%20cx%3D%22450%22%20cy%3D%22375%22%20rx%3D%22330%22%20ry%3D%2235%22%20fill%3D%22%2394a3b8%22%20opacity%3D%22.45%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M170%20335%20L205%20250%20Q220%20220%20265%20205%20L350%20165%20Q380%20150%20425%20150%20L565%20150%20Q610%20150%20640%20180%20L705%20230%20Q735%20250%20750%20300%20L770%20335%20Z%22%20fill%3D%22url%28%23body%29%22%20stroke%3D%22%23111827%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M285%20205%20L365%20170%20Q385%20162%20420%20162%20L555%20162%20Q595%20162%20620%20190%20L655%20225%20L285%20225%20Z%22%20fill%3D%22%2393c5fd%22%20stroke%3D%22%23111827%22%20stroke-width%3D%226%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M300%20205%20L365%20178%20L410%20178%20L410%20220%20L300%20220%20Z%22%20fill%3D%22%23bfdbfe%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M425%20178%20L550%20178%20Q590%20178%20615%20205%20L628%20220%20L425%20220%20Z%22%20fill%3D%22%23bfdbfe%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22275%22%20cy%3D%22337%22%20r%3D%2255%22%20fill%3D%22%23111827%22/%3E%3Ccircle%20cx%3D%22275%22%20cy%3D%22337%22%20r%3D%2225%22%20fill%3D%22%23cbd5e1%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22665%22%20cy%3D%22337%22%20r%3D%2255%22%20fill%3D%22%23111827%22/%3E%3Ccircle%20cx%3D%22665%22%20cy%3D%22337%22%20r%3D%2225%22%20fill%3D%22%23cbd5e1%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22710%22%20y%3D%22270%22%20width%3D%2228%22%20height%3D%2235%22%20rx%3D%226%22%20fill%3D%22%23fef08a%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22185%22%20y%3D%22270%22%20width%3D%2228%22%20height%3D%2235%22%20rx%3D%226%22%20fill%3D%22%23ef4444%22/%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22450%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%22%20font-size%3D%2242%22%20font-weight%3D%22700%22%20fill%3D%22%23111827%22%3EMaruti%20Swift%3C/text%3E%0A%20%20%20%20%3C/svg%3E"><h3>Maruti Swift</h3><p>Perfect for comfortable trips.</p></div>
+<div class="card"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%20500%22%3E%0A%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20x2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23dbeafe%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f8fafc%22/%3E%3C/linearGradient%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22body%22%20x1%3D%220%22%20x2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%232563eb%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffffff%22/%3E%3C/linearGradient%3E%0A%20%20%20%20%20%20%3C/defs%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%22500%22%20fill%3D%22url%28%23bg%29%22/%3E%0A%20%20%20%20%20%20%3Crect%20y%3D%22365%22%20width%3D%22900%22%20height%3D%22135%22%20fill%3D%22%23d1d5db%22/%3E%0A%20%20%20%20%20%20%3Cellipse%20cx%3D%22450%22%20cy%3D%22375%22%20rx%3D%22330%22%20ry%3D%2235%22%20fill%3D%22%2394a3b8%22%20opacity%3D%22.45%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M170%20335%20L205%20250%20Q220%20220%20265%20205%20L350%20165%20Q380%20150%20425%20150%20L565%20150%20Q610%20150%20640%20180%20L705%20230%20Q735%20250%20750%20300%20L770%20335%20Z%22%20fill%3D%22url%28%23body%29%22%20stroke%3D%22%23111827%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M285%20205%20L365%20170%20Q385%20162%20420%20162%20L555%20162%20Q595%20162%20620%20190%20L655%20225%20L285%20225%20Z%22%20fill%3D%22%2393c5fd%22%20stroke%3D%22%23111827%22%20stroke-width%3D%226%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M300%20205%20L365%20178%20L410%20178%20L410%20220%20L300%20220%20Z%22%20fill%3D%22%23bfdbfe%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M425%20178%20L550%20178%20Q590%20178%20615%20205%20L628%20220%20L425%20220%20Z%22%20fill%3D%22%23bfdbfe%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22275%22%20cy%3D%22337%22%20r%3D%2255%22%20fill%3D%22%23111827%22/%3E%3Ccircle%20cx%3D%22275%22%20cy%3D%22337%22%20r%3D%2225%22%20fill%3D%22%23cbd5e1%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22665%22%20cy%3D%22337%22%20r%3D%2255%22%20fill%3D%22%23111827%22/%3E%3Ccircle%20cx%3D%22665%22%20cy%3D%22337%22%20r%3D%2225%22%20fill%3D%22%23cbd5e1%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22710%22%20y%3D%22270%22%20width%3D%2228%22%20height%3D%2235%22%20rx%3D%226%22%20fill%3D%22%23fef08a%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22185%22%20y%3D%22270%22%20width%3D%2228%22%20height%3D%2235%22%20rx%3D%226%22%20fill%3D%22%23ef4444%22/%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22450%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%22%20font-size%3D%2242%22%20font-weight%3D%22700%22%20fill%3D%22%23111827%22%3EMaruti%20Ertiga%3C/text%3E%0A%20%20%20%20%3C/svg%3E"><h3>Maruti Ertiga</h3><p>Spacious option for family groups.</p></div>
+<div class="card"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%20500%22%3E%0A%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20x2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23dbeafe%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f8fafc%22/%3E%3C/linearGradient%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D%22body%22%20x1%3D%220%22%20x2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f3f4f6%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ffffff%22/%3E%3C/linearGradient%3E%0A%20%20%20%20%20%20%3C/defs%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%22500%22%20fill%3D%22url%28%23bg%29%22/%3E%0A%20%20%20%20%20%20%3Crect%20y%3D%22365%22%20width%3D%22900%22%20height%3D%22135%22%20fill%3D%22%23d1d5db%22/%3E%0A%20%20%20%20%20%20%3Cellipse%20cx%3D%22450%22%20cy%3D%22375%22%20rx%3D%22330%22%20ry%3D%2235%22%20fill%3D%22%2394a3b8%22%20opacity%3D%22.45%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M170%20335%20L205%20250%20Q220%20220%20265%20205%20L350%20165%20Q380%20150%20425%20150%20L565%20150%20Q610%20150%20640%20180%20L705%20230%20Q735%20250%20750%20300%20L770%20335%20Z%22%20fill%3D%22url%28%23body%29%22%20stroke%3D%22%23111827%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M285%20205%20L365%20170%20Q385%20162%20420%20162%20L555%20162%20Q595%20162%20620%20190%20L655%20225%20L285%20225%20Z%22%20fill%3D%22%2393c5fd%22%20stroke%3D%22%23111827%22%20stroke-width%3D%226%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M300%20205%20L365%20178%20L410%20178%20L410%20220%20L300%20220%20Z%22%20fill%3D%22%23bfdbfe%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M425%20178%20L550%20178%20Q590%20178%20615%20205%20L628%20220%20L425%20220%20Z%22%20fill%3D%22%23bfdbfe%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22275%22%20cy%3D%22337%22%20r%3D%2255%22%20fill%3D%22%23111827%22/%3E%3Ccircle%20cx%3D%22275%22%20cy%3D%22337%22%20r%3D%2225%22%20fill%3D%22%23cbd5e1%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22665%22%20cy%3D%22337%22%20r%3D%2255%22%20fill%3D%22%23111827%22/%3E%3Ccircle%20cx%3D%22665%22%20cy%3D%22337%22%20r%3D%2225%22%20fill%3D%22%23cbd5e1%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22710%22%20y%3D%22270%22%20width%3D%2228%22%20height%3D%2235%22%20rx%3D%226%22%20fill%3D%22%23fef08a%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22185%22%20y%3D%22270%22%20width%3D%2228%22%20height%3D%2235%22%20rx%3D%226%22%20fill%3D%22%23ef4444%22/%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22450%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%22%20font-size%3D%2242%22%20font-weight%3D%22700%22%20fill%3D%22%23111827%22%3EToyota%20Etios%3C/text%3E%0A%20%20%20%20%3C/svg%3E"><h3>Toyota Etios</h3><p>Comfortable and reliable travel.</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">Why Choose Advithi?</h2>
+<p class="sub">Travel comfortably and safely with us.</p>
+<div class="info">
+<div><div class="icon">🚕</div><h3>Comfortable Cars</h3><p>Clean and comfortable cars for your journey.</p></div>
+<div><div class="icon">🛡️</div><h3>Safe Journey</h3><p>Your safety and comfort are our priority.</p></div>
+<div><div class="icon">📞</div><h3>Easy Booking</h3><p>Book online or contact us directly.</p></div>
+</div>
+</section>
+
+<footer>
+<h3>Advithi Travel Agency</h3>
+<p>Tangutur & Ongole, Andhra Pradesh</p>
+<p>📞 <a href="tel:8143344418">8143344418</a></p>
+<p style="margin-top:8px">© 2026 Advithi Travel Agency. All Rights Reserved.</p>
+</footer>
+
+<script>
+const API_URL="https://script.google.com/macros/s/AKfycbyiCTDqZAMFckxp8aHo-Gpf1gmWMrGd_JOfz4kLA6VQvQ17rYYQdztp2ytPHJEcXB7W/exec";
+
+// Place autocomplete for Pickup and Destination
+function setupPlaceAutocomplete(inputId, suggestionsId){
+ const input=document.getElementById(inputId);
+ const box=document.getElementById(suggestionsId);
+ let timer=null;
+ let controller=null;
+
+ input.addEventListener("input",()=>{
+   const q=input.value.trim();
+   clearTimeout(timer);
+   if(q.length<3){
+     box.style.display="none";
+     box.innerHTML="";
+     return;
+   }
+
+   timer=setTimeout(async()=>{
+     try{
+       if(controller) controller.abort();
+       controller=new AbortController();
+
+       const url="https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=6&countrycodes=in&q="+encodeURIComponent(q);
+       const response=await fetch(url,{
+         signal:controller.signal,
+         headers:{"Accept":"application/json"}
+       });
+       const places=await response.json();
+
+       if(!places.length){
+         box.innerHTML='<div class="suggestion-item">No places found</div>';
+         box.style.display="block";
+         return;
+       }
+
+       box.innerHTML=places.map(p=>{
+         const name=(p.display_name||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+         const parts=(p.display_name||"").split(", ");
+         const main=(parts.slice(0,2).join(", ")||p.display_name).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+         const sub=(parts.slice(2).join(", ")).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+         return '<div class="suggestion-item" data-place="'+name+'"><div class="suggestion-main">'+main+'</div><div class="suggestion-sub">'+sub+'</div></div>';
+       }).join("");
+
+       box.style.display="block";
+
+       box.querySelectorAll(".suggestion-item").forEach(item=>{
+         item.addEventListener("click",()=>{
+           if(item.dataset.place){
+             input.value=item.dataset.place;
+             box.style.display="none";
+           }
+         });
+       });
+     }catch(err){
+       if(err.name!=="AbortError") console.error("Place search:",err);
+     }
+   },450);
+ });
+
+ document.addEventListener("click",(e)=>{
+   if(!input.contains(e.target) && !box.contains(e.target)){
+     box.style.display="none";
+   }
+ });
+}
+
+setupPlaceAutocomplete("pickup","pickupSuggestions");
+setupPlaceAutocomplete("destination","destinationSuggestions");
+
+const form=document.getElementById("bookingForm");
+const btn=document.getElementById("submitBtn");
+const loading=document.getElementById("loading");
+const success=document.getElementById("success");
+const error=document.getElementById("error");
+const travelDate=document.getElementById("travelDate");
+
+const today=new Date().toISOString().split("T")[0];
+travelDate.min=today;
+
+
+form.addEventListener("submit",async(e)=>{
+ e.preventDefault();
+ success.style.display="none";
+ error.style.display="none";
+ btn.disabled=true;
+ loading.style.display="block";
+
+ const data=new FormData(form);
+ data.append("action","submitBooking");
+
+ try{
+   const response=await fetch(API_URL,{method:"POST",body:data});
+   const result=await response.json();
+
+   if(!result.ok) throw new Error(result.message||result.error||"Booking failed");
+
+   form.reset();
+   travelDate.min=today;
+   success.innerHTML="✅ Booking request sent successfully!<br>Booking ID: <b>"+(result.bookingId||"Received")+"</b><br>Our team will review it and you will receive an email after approval or rejection."; success.style.display="block";
+   success.scrollIntoView({behavior:"smooth",block:"center"});
+ }catch(err){
+   console.error(err);
+   error.style.display="block";
+   error.scrollIntoView({behavior:"smooth",block:"center"});
+ }finally{
+   btn.disabled=false;
+   loading.style.display="none";
+ }
+});
+</script>
+
+</body>
+</html>
