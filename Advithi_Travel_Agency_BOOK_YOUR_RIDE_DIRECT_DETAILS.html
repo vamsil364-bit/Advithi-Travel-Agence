@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<title>Advithi Travel Agency | Car Rental in Tangutur & Ongole</title>
+<meta name="description" content="Advithi Travel Agency - comfortable car rentals and travel services in Tangutur and Ongole. Book your ride online or call 8143344418.">
+
+<style>
+:root{
+  --bg:#f5f7fb;
+  --dark:#09111f;
+  --dark2:#101a2d;
+  --text:#101828;
+  --muted:#667085;
+  --gold:#f5b942;
+  --gold2:#ffd76a;
+  --green:#16a34a;
+  --wa:#25d366;
+  --white:#fff;
+  --line:#e4e7ec;
+  --shadow:0 18px 55px rgba(16,24,40,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.5;
+}
+a{color:inherit}
+.container{width:min(1160px,calc(100% - 32px));margin:auto}
+
+/* TOP BAR */
+.topbar{
+  background:#07101e;color:#dbe5f5;font-size:13px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:9px 0}
+.topbar strong{color:#fff}
+.toplinks{display:flex;gap:18px;align-items:center}
+.toplinks a{text-decoration:none;color:#dbe5f5}
+
+/* NAV */
+header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(9,17,31,.94);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.08);color:#fff;
+}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brandmark{
+  width:43px;height:43px;border-radius:13px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111827;
+  font-size:23px;box-shadow:0 8px 22px rgba(245,185,66,.22)
+}
+.brandtext b{display:block;font-size:18px;letter-spacing:-.3px}
+.brandtext span{font-size:11px;color:#aab6c8;letter-spacing:1.2px;text-transform:uppercase}
+.navlinks{display:flex;align-items:center;gap:7px}
+.navlinks a{padding:9px 12px;border-radius:9px;text-decoration:none;color:#dbe5f5;font-weight:650;font-size:14px}
+.navlinks a:hover{background:rgba(255,255,255,.07);color:#fff}
+.nav-actions{display:flex;gap:8px}
+.navbtn{text-decoration:none;border-radius:10px;padding:10px 14px;font-weight:800;font-size:13px}
+.navcall{background:#fff;color:#101828}
+.navwa{background:var(--wa);color:#fff}
+.menu{display:none;border:0;background:transparent;color:#fff;font-size:27px}
+
+/* HERO */
+.hero{
+  position:relative;min-height:650px;display:flex;align-items:center;overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(4,10,20,.94) 0%,rgba(4,10,20,.78) 42%,rgba(4,10,20,.28) 100%),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85") center/cover;
+}
+.hero:after{
+  content:"";position:absolute;inset:auto 0 0;height:150px;
+  background:linear-gradient(transparent,var(--bg));pointer-events:none
+}
+.hero-content{position:relative;z-index:2;padding:75px 0 110px;max-width:720px;color:#fff}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(12px);font-size:13px;font-weight:750;color:#fff;margin-bottom:18px
+}
+.dot{width:8px;height:8px;border-radius:50%;background:#35d07f;box-shadow:0 0 0 5px rgba(53,208,127,.14)}
+.hero h1{font-size:clamp(40px,6vw,72px);line-height:1.03;letter-spacing:-2.8px;margin-bottom:18px}
+.hero h1 span{color:var(--gold2)}
+.hero p.lead{font-size:19px;color:#d8e0ec;max-width:620px;margin-bottom:28px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;border-radius:12px;padding:14px 20px;font-weight:850;border:1px solid transparent;transition:.2s transform,.2s box-shadow}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111827;box-shadow:0 12px 30px rgba(245,185,66,.2)}
+.btn-call{background:#18a957;color:#fff}
+.btn-outline{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;backdrop-filter:blur(8px)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.trust{padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#e7edf6;font-size:12px;font-weight:700}
+
+/* QUICK ACTIONS */
+.quick{margin-top:-48px;position:relative;z-index:10}
+.quickbox{
+  background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);
+  padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px
+}
+.quickitem{display:flex;align-items:center;gap:13px;padding:12px 15px;border-radius:14px;background:#f8fafc;text-decoration:none}
+.quickicon{width:43px;height:43px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:#eef2ff}
+.quickitem b{display:block;font-size:14px}
+.quickitem span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+
+/* SECTIONS */
+.section{padding:82px 0}
+.kicker{text-align:center;color:#b27a12;font-size:12px;font-weight:900;letter-spacing:1.7px;text-transform:uppercase;margin-bottom:8px}
+.title{text-align:center;font-size:clamp(30px,4vw,44px);letter-spacing:-1.5px;line-height:1.1}
+.sub{text-align:center;color:var(--muted);max-width:680px;margin:10px auto 36px}
+
+/* FLEET */
+.fleet{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.carcard{
+  background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  box-shadow:0 7px 25px rgba(16,24,40,.06);transition:.25s transform,.25s box-shadow
+}
+.carcard:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(16,24,40,.12)}
+.carimage{height:190px;position:relative;overflow:hidden;background:#eaf0f7}
+.carimage img{width:100%;height:100%;object-fit:cover;transition:.4s transform}
+.carcard:hover .carimage img{transform:scale(1.05)}
+.carlabel{position:absolute;top:12px;left:12px;padding:6px 9px;border-radius:8px;background:rgba(9,17,31,.82);color:#fff;font-size:11px;font-weight:850}
+.carbody{padding:16px}
+.carbody h3{font-size:18px;margin-bottom:4px}
+.carbody p{color:var(--muted);font-size:13px;min-height:40px}
+.carbook{display:block;text-align:center;margin-top:14px;padding:10px;border-radius:10px;background:#f8fafc;color:#101828;text-decoration:none;font-weight:800;font-size:13px}
+
+/* WHY */
+.whywrap{background:#0b1322;color:#fff}
+.whygrid{display:grid;grid-template-columns:1.05fr 1fr;gap:45px;align-items:center}
+.whycopy .kicker{text-align:left;color:var(--gold2)}
+.whycopy .title{text-align:left;color:#fff}
+.whycopy .sub{text-align:left;margin-left:0;color:#aebbd0}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:25px}
+.feature{padding:17px;border-radius:15px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08)}
+.featureicon{font-size:25px;margin-bottom:8px}
+.feature h3{font-size:15px;margin-bottom:3px}
+.feature p{font-size:12px;color:#aebbd0}
+.statbox{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.stat{border-radius:20px;padding:26px;background:linear-gradient(145deg,#142239,#0d1728);border:1px solid rgba(255,255,255,.08)}
+.stat strong{display:block;font-size:34px;color:var(--gold2)}
+.stat span{font-size:13px;color:#b6c1d1}
+
+/* BOOKING */
+.booking-section{background:linear-gradient(180deg,#f5f7fb,#eef2f7)}
+.booking-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:start}
+.booking-intro{
+  background:linear-gradient(145deg,#0b1322,#17243a);color:#fff;border-radius:22px;padding:30px;
+  position:sticky;top:94px;overflow:hidden
+}
+.booking-intro:after{content:"✦";position:absolute;right:-20px;top:-45px;font-size:180px;color:rgba(255,255,255,.04)}
+.booking-intro .kicker{text-align:left;color:var(--gold2)}
+.booking-intro h2{font-size:34px;line-height:1.1;letter-spacing:-1px;margin-bottom:10px}
+.booking-intro p{color:#b9c5d6;font-size:14px}
+.mini-list{margin-top:25px;display:grid;gap:11px}
+.mini{display:flex;gap:10px;align-items:center;color:#e5ebf4;font-size:13px}
+.check{width:25px;height:25px;border-radius:8px;display:grid;place-items:center;background:rgba(245,185,66,.14);color:var(--gold2)}
+.contactcard{margin-top:25px;padding:15px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.contactcard small{display:block;color:#94a3b8;margin-bottom:3px}
+.contactcard a{color:#fff;text-decoration:none;font-weight:850;font-size:18px}
+
+.formbox{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.formhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:22px}
+.formhead h2{font-size:27px;letter-spacing:-.7px}
+.formhead p{color:var(--muted);font-size:13px;margin-top:3px}
+.required{font-size:11px;color:#98a2b3}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.group{display:flex;flex-direction:column;min-width:0}
+.full{grid-column:1/-1}
+label{font-size:13px;font-weight:800;margin-bottom:6px}
+input,select,textarea{
+  width:100%;border:1px solid #d0d5dd;border-radius:11px;padding:13px 13px;
+  font:inherit;font-size:14px;color:#101828;background:#fff;outline:none;
+  transition:.15s border,.15s box-shadow
+}
+input:focus,select:focus,textarea:focus{border-color:#c99320;box-shadow:0 0 0 4px rgba(245,185,66,.13)}
+textarea{min-height:100px;resize:vertical}
+.place-wrap{position:relative}
+.suggestions{
+  display:none;position:absolute;left:0;right:0;top:100%;z-index:100;
+  background:#fff;border:1px solid #d0d5dd;border-top:0;border-radius:0 0 11px 11px;
+  max-height:230px;overflow:auto;box-shadow:0 12px 25px rgba(0,0,0,.13)
+}
+.suggestion-item{padding:11px 13px;cursor:pointer;border-bottom:1px solid #f1f5f9;font-size:13px}
+.suggestion-item:hover{background:#f8fafc}
+.suggestion-main{font-weight:800;color:#101828}
+.suggestion-sub{font-size:11px;color:#667085;margin-top:2px}
+.submit{
+  width:100%;margin-top:18px;border:0;border-radius:12px;padding:15px;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111827;
+  font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 10px 25px rgba(245,185,66,.2)
+}
+.submit:disabled{opacity:.6;cursor:not-allowed}
+.loading,.msg{display:none;margin-top:13px;padding:13px;border-radius:10px;text-align:center;font-weight:750;font-size:13px}
+.loading{background:#f2f4f7;color:#475467}
+.success{background:#dcfce7;color:#166534}
+.error{background:#fee2e2;color:#991b1b}
+
+/* CTA */
+.cta{padding:70px 0}
+.ctabox{
+  border-radius:24px;padding:38px;display:flex;align-items:center;justify-content:space-between;gap:25px;
+  background:linear-gradient(135deg,#101a2d,#0a1220);color:#fff;box-shadow:var(--shadow)
+}
+.ctabox h2{font-size:32px;letter-spacing:-1px}
+.ctabox p{color:#aebbd0;margin-top:5px}
+.ctabtns{display:flex;gap:9px;flex-shrink:0}
+
+/* FOOTER */
+footer{background:#07101e;color:#9aa9bd;padding:42px 0 85px}
+.footergrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}
+.footerbrand h3{color:#fff;font-size:20px;margin-bottom:6px}
+.footerbrand p{font-size:13px;max-width:400px}
+.footercol h4{color:#fff;margin-bottom:10px;font-size:14px}
+.footercol a{display:block;text-decoration:none;color:#9aa9bd;font-size:13px;margin:7px 0}
+.copyright{border-top:1px solid rgba(255,255,255,.08);margin-top:28px;padding-top:18px;font-size:12px;text-align:center}
+
+@media(max-width:950px){
+  .navlinks{display:none}
+  .fleet{grid-template-columns:1fr 1fr}
+  .booking-layout,.whygrid{grid-template-columns:1fr}
+  .booking-intro{position:static}
+  .statbox{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .topbar{display:none}
+  .nav{height:64px}
+  .nav-actions .navbtn:first-child{display:none}
+  .brandmark{width:38px;height:38px}
+  .brandtext b{font-size:16px}
+  .hero{min-height:610px;background-position:62% center}
+  .hero-content{padding:60px 0 100px}
+  .hero h1{letter-spacing:-1.8px}
+  .hero p.lead{font-size:16px}
+  .quick{margin-top:-35px}
+  .quickbox{grid-template-columns:1fr}
+  .section{padding:60px 0}
+  .fleet{grid-template-columns:1fr 1fr;gap:11px}
+  .carimage{height:140px}
+  .carbody{padding:12px}
+  .carbody h3{font-size:15px}
+  .carbody p{font-size:11px;min-height:0}
+  .formgrid{grid-template-columns:1fr}
+  .full{grid-column:auto}
+  .formbox{padding:20px}
+  .features{grid-template-columns:1fr}
+  .cta{padding:50px 0}
+  .ctabox{padding:28px;display:block}
+  .ctabox h2{font-size:26px}
+  .ctabtns{margin-top:18px}
+  .footergrid{grid-template-columns:1fr}
+}
+@media(max-width:420px){
+  .fleet{grid-template-columns:1fr}
+  .carimage{height:185px}
+  .hero-buttons .btn{width:100%}
+  .hero-trust{display:grid;grid-template-columns:1fr 1fr}
+  .quickbox{padding:12px}
+}
+</style>
+
+<style>
+.route-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:30px;
+}
+.route-card{
+  position:relative;
+  background:#fff;
+  border:1px solid #e4e7ec;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 8px 28px rgba(16,24,40,.06);
+  transition:.22s transform,.22s box-shadow;
+}
+.route-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(16,24,40,.11);
+}
+.route-icon{
+  width:48px;height:48px;border-radius:14px;
+  display:grid;place-items:center;
+  background:#fff6dc;font-size:23px;
+  margin-bottom:15px;
+}
+.route-from{
+  color:#b27a12;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.4px;
+  margin-bottom:4px;
+}
+.route-card h3{
+  font-size:21px;
+  letter-spacing:-.4px;
+  margin-bottom:6px;
+}
+.route-card p{
+  color:#667085;
+  font-size:13px;
+  line-height:1.55;
+  margin-bottom:14px;
+}
+.route-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  padding-right:120px;
+}
+.route-tags span{
+  font-size:10px;
+  font-weight:800;
+  color:#344054;
+  background:#f2f4f7;
+  border-radius:999px;
+  padding:5px 8px;
+}
+.route-link{
+  position:absolute;
+  right:20px;
+  bottom:21px;
+  color:#101828;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:900;
+}
+.route-link:hover{color:#b27a12}
+.route-custom{
+  background:linear-gradient(145deg,#101a2d,#0b1322);
+  color:#fff;
+  border-color:transparent;
+}
+.route-custom .route-card,
+.route-custom h3{color:#fff}
+.route-custom p{color:#b9c5d6}
+.route-custom .route-tags span{background:rgba(255,255,255,.09);color:#e7edf6}
+.route-custom .route-link{color:#ffd76a}
+.route-custom .route-icon{background:rgba(245,185,66,.14)}
+@media(max-width:700px){
+  .route-grid{grid-template-columns:1fr;gap:12px}
+  .route-card{padding:18px}
+  .route-card h3{font-size:19px}
+  .route-tags{padding-right:0;padding-bottom:28px}
+  .route-link{left:18px;right:auto;bottom:16px}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div><strong>Advithi Travel Agency</strong> · Tangutur & Ongole</div>
+    <div class="toplinks">
+      <a href="tel:8143344418">📞 8143344418</a>
+      <a href="https://wa.me/918143344418" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#">
+      <div class="brandmark">🚕</div>
+      <div class="brandtext">
+        <b>Advithi Travel Agency</b>
+        <span>Ride • Travel • Explore</span>
+      </div>
+    </a>
+
+    <nav class="navlinks">
+      
+      <a href="#routes">Routes</a>
+      <a href="#why">Why Us</a>
+      <a href="#booking">Book Now</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="navbtn navcall" href="tel:8143344418">📞 Call</a>
+      <a class="navbtn navwa" href="https://wa.me/918143344418" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="badge"><span class="dot"></span> Booking available in Tangutur & Ongole</div>
+      <h1>Your Journey.<br><span>Our Responsibility.</span></h1>
+      <p class="lead">Advithi Travel Agency is your local travel partner in Tangutur and Ongole, focused on comfortable rides, dependable service and a smooth booking experience for family trips, local travel and outstation journeys.</p>
+      <p class="lead" style="font-size:14px;margin-top:-16px;color:#cbd5e1">Tell us where you want to go, when you want to travel and how many people are travelling — our team will review your request and get back to you.</p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#booking">🚕 Book Your Ride</a>
+        <a class="btn btn-call" href="tel:8143344418">📞 Call 8143344418</a>
+        <a class="btn btn-outline" href="https://wa.me/918143344418" target="_blank">💬 WhatsApp</a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="trust">✓ Easy online booking</div>
+        <div class="trust">✓ Family-friendly cars</div>
+        <div class="trust">✓ Tangutur • Ongole</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section booking-section" id="booking">
+  <div class="container">
+    <div class="kicker">Online Booking</div>
+    <h2 class="title">Book Your Ride</h2>
+    <p class="sub">Send your travel details. Our team will review your request and contact you by email after approval or rejection.</p>
+
+    <div class="booking-layout">
+
+      <div class="booking-direct-title">
+        <div class="kicker">Direct Travel Details</div>
+      </div>
+
+      <div class="formbox">
+        <div class="formhead">
+          <div>
+            <h2>Travel Details</h2>
+            <p>All fields marked * are required.</p>
+          </div>
+          <div class="required">Secure booking request</div>
+        </div>
+
+        <form id="bookingForm">
+          <div class="formgrid">
+
+            <div class="group">
+              <label>Customer Name *</label>
+              <input name="customerName" required placeholder="Enter your name">
+            </div>
+
+            <div class="group">
+              <label>Phone Number *</label>
+              <input name="phone" type="tel" required placeholder="Enter phone number">
+            </div>
+
+            <div class="group">
+              <label>Email *</label>
+              <input name="email" type="email" required placeholder="Enter email address">
+            </div>
+
+            <div class="group">
+              <label>Travelers *</label>
+              <select name="travelers" required>
+                <option value="">Select travelers</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8</option>
+                <option>9</option><option>10+</option>
+              </select>
+            </div>
+
+            <div class="group">
+              <label>Pickup Location *</label>
+              <div class="place-wrap">
+                <input id="pickup" name="pickup" required autocomplete="off" placeholder="Start typing a location">
+                <div id="pickupSuggestions" class="suggestions"></div>
+              </div>
+            </div>
+
+            <div class="group">
+              <label>Destination *</label>
+              <div class="place-wrap">
+                <input id="destination" name="destination" required autocomplete="off" placeholder="Where are you going?">
+                <div id="destinationSuggestions" class="suggestions"></div>
+              </div>
+            </div>
+
+            <div class="group">
+              <label>Travel Date *</label>
+              <input id="travelDate" name="travelDate" type="date" required>
+            </div>
+
+            <div class="group">
+              <label>Travel Time *</label>
+              <input name="travelTime" type="time" required>
+            </div>
+
+            <div class="group">
+              <label>Choose Car *</label>
+              <select name="car" required>
+                <option value="">Select a car</option>
+                <option>Honda Amaze</option>
+                <option>Maruti Swift</option>
+                <option>Maruti Ertiga</option>
+                <option>Toyota Etios</option>
+              </select>
+            </div>
+
+            <div class="group full">
+              <label>Additional Details</label>
+              <textarea name="notes" placeholder="Any special requirements, luggage details, pickup notes, etc."></textarea>
+            </div>
+
+          </div>
+
+          <button class="submit" id="submitBtn" type="submit">🚕 Send Booking Request</button>
+          <div class="loading" id="loading">⏳ Sending your booking request...</div>
+          <div class="msg success" id="success"></div>
+          <div class="msg error" id="error">❌ Booking could not be submitted. Please call 8143344418.</div>
+        </form>
+      </div>
+
+      <section class="quick">
+  <div class="container">
+    <div class="quickbox">
+      <a class="quickitem" href="#booking">
+        <div class="quickicon">📅</div>
+        <div><b>Plan your trip</b><span>Select date & time in seconds</span></div>
+      </a>
+      <a class="quickitem" href="tel:8143344418">
+        <div class="quickicon">📞</div>
+        <div><b>Talk to us</b><span>Call 8143344418</span></div>
+      </a>
+      <a class="quickitem" href="https://wa.me/918143344418" target="_blank">
+        <div class="quickicon">💬</div>
+        <div><b>WhatsApp us</b><span>Quick travel enquiry</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="routes">
+  <div class="container">
+    <div class="kicker">Popular Outstation Routes</div>
+    <h2 class="title">Travel From Ongole With Advithi</h2>
+    <p class="sub">Planning a family trip, pilgrimage, airport transfer or outstation journey? Send your travel details and our team will review your request.</p>
+
+    <div class="route-grid">
+
+      <article class="route-card">
+        <div class="route-icon">🏙️</div>
+        <div>
+          <div class="route-from">ONGOLE → VIJAYAWADA</div>
+          <h3>Ongole to Vijayawada</h3>
+          <p>Convenient travel for airport transfers, business visits, family trips and city travel.</p>
+          <div class="route-tags"><span>Airport</span><span>Business</span><span>Family Trips</span></div>
+        </div>
+        <a href="#booking" class="route-link">Book this route →</a>
+      </article>
+
+      <article class="route-card">
+        <div class="route-icon">🌆</div>
+        <div>
+          <div class="route-from">ONGOLE → HYDERABAD</div>
+          <h3>Ongole to Hyderabad</h3>
+          <p>Outstation cab service for Hyderabad city trips, airport transfers, work visits and family travel.</p>
+          <div class="route-tags"><span>Outstation</span><span>Airport</span><span>Family Trips</span></div>
+        </div>
+        <a href="#booking" class="route-link">Book this route →</a>
+      </article>
+
+      <article class="route-card">
+        <div class="route-icon">✈️</div>
+        <div>
+          <div class="route-from">ONGOLE → CHENNAI</div>
+          <h3>Ongole to Chennai</h3>
+          <p>Comfortable long-distance travel for Chennai city journeys, airport drops, work and family trips.</p>
+          <div class="route-tags"><span>Long Distance</span><span>Airport</span><span>City Travel</span></div>
+        </div>
+        <a href="#booking" class="route-link">Book this route →</a>
+      </article>
+
+      <article class="route-card">
+        <div class="route-icon">🛕</div>
+        <div>
+          <div class="route-from">ONGOLE → TIRUPATI</div>
+          <h3>Ongole to Tirupati</h3>
+          <p>Plan your Tirupati pilgrimage with a comfortable journey for family and group travel.</p>
+          <div class="route-tags"><span>Temple Trip</span><span>Family</span><span>Outstation</span></div>
+        </div>
+        <a href="#booking" class="route-link">Book this route →</a>
+      </article>
+
+      <article class="route-card">
+        <div class="route-icon">🙏</div>
+        <div>
+          <div class="route-from">ONGOLE → SRISAILAM</div>
+          <h3>Ongole to Srisailam</h3>
+          <p>Convenient pilgrimage travel to Srisailam for family groups and devotees.</p>
+          <div class="route-tags"><span>Pilgrimage</span><span>Family</span><span>Round Trip</span></div>
+        </div>
+        <a href="#booking" class="route-link">Book this route →</a>
+      </article>
+
+      <article class="route-card route-custom">
+        <div class="route-icon">🗺️</div>
+        <div>
+          <div class="route-from">YOUR DESTINATION</div>
+          <h3>Need another route?</h3>
+          <p>Tell us your pickup location, destination, date, time and number of travellers. We can review your custom travel request.</p>
+          <div class="route-tags"><span>Custom Trip</span><span>One Way</span><span>Round Trip</span></div>
+        </div>
+        <a href="#booking" class="route-link">Send enquiry →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section whywrap" id="why">
+  <div class="container">
+    <div class="whygrid">
+
+      <div class="whycopy">
+        <div class="kicker">Why Advithi?</div>
+        <h2 class="title">Travel with confidence.<br>Choose Advithi.</h2>
+        <p class="sub">Advithi Travel Agency is a customer-focused travel service based in Tangutur, serving Tangutur and Ongole. We aim to make every journey simple from the first enquiry to the final drop — with easy online booking, direct communication and a service-first approach.</p>
+
+        <div class="features">
+          <div class="feature">
+            <div class="featureicon">🤝</div>
+            <h3>Customer First</h3>
+            <p>We listen to your travel needs and help you plan the ride you require.</p>
+          </div>
+          <div class="feature">
+            <div class="featureicon">📍</div>
+            <h3>Tangutur & Ongole</h3>
+            <p>Local travel support with a convenient point of contact for your journey.</p>
+          </div>
+          <div class="feature">
+            <div class="featureicon">📅</div>
+            <h3>Easy Booking</h3>
+            <p>Share your pickup, destination, date, time and traveller details online.</p>
+          </div>
+          <div class="feature">
+            <div class="featureicon">📞</div>
+            <h3>Direct Support</h3>
+            <p>Call or WhatsApp us when you need help with your travel request.</p>
+          </div>
+        </div>
+      </div>
+      <div class="statbox">
+        <div class="stat"><strong>Local</strong><span>Tangutur & Ongole service</span></div>
+        <div class="stat"><strong>24/7</strong><span>Online booking requests</span></div>
+        <div class="stat"><strong>Easy</strong><span>Online booking experience</span></div>
+        <div class="stat"><strong>1</strong><span>Easy booking form</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="cta">
+  <div class="container">
+    <div class="ctabox">
+      <div>
+        <h2>Plan your journey with Advithi.</h2>
+        <p>For travel enquiries, bookings or assistance, call or WhatsApp us directly.</p>
+      </div>
+      <div class="ctabtns">
+        <a class="btn btn-primary" href="tel:8143344418">📞 Call Now</a>
+        <a class="btn btn-call" href="https://wa.me/918143344418" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footergrid">
+      <div class="footerbrand">
+        <h3>Advithi Travel Agency</h3>
+        <p>Advithi Travel Agency is a local travel service in Tangutur serving Tangutur and Ongole, Andhra Pradesh. Comfortable rides, dependable service and easy booking.</p>
+      </div>
+      <div class="footercol">
+        <h4>Quick Links</h4>
+        
+        <a href="#why">Why Choose Us</a>
+        <a href="#booking">Book Your Ride</a>
+      </div>
+      <div class="footercol">
+        <h4>Contact</h4>
+        <a href="tel:8143344418">📞 8143344418</a>
+        <a href="https://wa.me/918143344418" target="_blank">💬 WhatsApp</a>
+        <a href="mailto:advithitravelagency@gmail.com">✉️ Email</a>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Advithi Travel Agency. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbzJqaPl2NbZoR88KzQjPQnmQWAkSZzK8m-nIVP5els0lGmRUxnXG0yD8brV8NSWRdSbgg/exec";
+
+/* Location autocomplete */
+function setupPlaceAutocomplete(inputId, suggestionsId){
+  const input=document.getElementById(inputId);
+  const box=document.getElementById(suggestionsId);
+  let timer=null;
+  let controller=null;
+
+  input.addEventListener("input",()=>{
+    const q=input.value.trim();
+    clearTimeout(timer);
+
+    if(q.length<3){
+      box.style.display="none";
+      box.innerHTML="";
+      return;
+    }
+
+    timer=setTimeout(async()=>{
+      try{
+        if(controller) controller.abort();
+        controller=new AbortController();
+
+        const url="https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=6&countrycodes=in&q="+encodeURIComponent(q);
+
+        const response=await fetch(url,{
+          signal:controller.signal,
+          headers:{"Accept":"application/json"}
+        });
+
+        const places=await response.json();
+
+        if(!places.length){
+          box.innerHTML='<div class="suggestion-item">No places found</div>';
+          box.style.display="block";
+          return;
+        }
+
+        box.innerHTML=places.map(p=>{
+          const full=(p.display_name||"")
+            .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+            .replace(/"/g,"&quot;");
+
+          const parts=(p.display_name||"").split(", ");
+          const main=(parts.slice(0,2).join(", ")||p.display_name)
+            .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+          const sub=parts.slice(2).join(", ")
+            .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+          return '<div class="suggestion-item" data-place="'+full+'"><div class="suggestion-main">'+main+'</div><div class="suggestion-sub">'+sub+'</div></div>';
+        }).join("");
+
+        box.style.display="block";
+
+        box.querySelectorAll(".suggestion-item").forEach(item=>{
+          item.addEventListener("click",()=>{
+            if(item.dataset.place){
+              input.value=item.dataset.place;
+              box.style.display="none";
+            }
+          });
+        });
+
+      }catch(err){
+        if(err.name!=="AbortError") console.error("Place search:",err);
+      }
+    },450);
+  });
+
+  document.addEventListener("click",(e)=>{
+    if(!input.contains(e.target) && !box.contains(e.target)){
+      box.style.display="none";
+    }
+  });
+}
+
+setupPlaceAutocomplete("pickup","pickupSuggestions");
+setupPlaceAutocomplete("destination","destinationSuggestions");
+
+/* Booking */
+const form=document.getElementById("bookingForm");
+const btn=document.getElementById("submitBtn");
+const loading=document.getElementById("loading");
+const success=document.getElementById("success");
+const error=document.getElementById("error");
+const travelDate=document.getElementById("travelDate");
+
+const today=new Date().toISOString().split("T")[0];
+travelDate.min=today;
+
+form.addEventListener("submit",async(e)=>{
+  e.preventDefault();
+
+  success.style.display="none";
+  error.style.display="none";
+  btn.disabled=true;
+  loading.style.display="block";
+
+  const data=new FormData(form);
+  data.append("action","submitBooking");
+
+  try{
+    const response=await fetch(API_URL,{method:"POST",body:data});
+    const result=await response.json();
+
+    if(!result.ok){
+      throw new Error(result.message||result.error||"Booking failed");
+    }
+
+    form.reset();
+    travelDate.min=today;
+
+    success.innerHTML =
+      "✅ Booking request sent successfully!<br>" +
+      "Booking ID: <b>"+(result.bookingId||"Received")+"</b><br>" +
+      "<span style='font-weight:600'>Our team will review it and you will receive an email after approval or rejection.</span>";
+
+    success.style.display="block";
+    success.scrollIntoView({behavior:"smooth",block:"center"});
+
+  }catch(err){
+    console.error(err);
+    error.textContent="❌ "+(err.message||"Booking could not be submitted.")+" Please call 8143344418.";
+    error.style.display="block";
+    error.scrollIntoView({behavior:"smooth",block:"center"});
+
+  }finally{
+    btn.disabled=false;
+    loading.style.display="none";
+  }
+});
+</script>
+
+</body>
+</html>
